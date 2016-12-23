@@ -27,11 +27,11 @@ class MusicasController extends Controller
 		
 		//$musica = Musica::find(1);
 		//$artista = Artista::with('musicas')->first();
-		$user = Auth::user();
-		$compras = $user->compra()->get();
+		//$user = Auth::user();
+		//$compras = $user->compra()->get();
 		
 
-	return view('musicas',compact('musica','compras'));
+	return view('musicas',compact('musica'));
 	}
 	
 	public function compra(Request $request)

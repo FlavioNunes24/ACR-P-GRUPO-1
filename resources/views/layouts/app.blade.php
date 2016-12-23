@@ -47,9 +47,6 @@
                     <a class="navbar-brand" href="{{ url('/top') }}">
                       Top
                     </a>
-                    <a class="navbar-brand" href="{{ url('/pesquisa') }}">
-                      Pesquisa
-                    </a>
                     <a class="navbar-brand" href="{{ url('/suporte') }}">
                       Suporte
                     </a>
@@ -68,6 +65,14 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
+                       <li>
+                       		<a><form action="/search" method="POST" role="search">
+								{{ csrf_field() }}
+									<input class="form-control input-sm" type="text" name="q"
+										   placeholder="Procurar" style="width: 200px; height: 25px">
+								</form>
+						   </a>
+						   </li>
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ url('/login') }}">Login</a></li>

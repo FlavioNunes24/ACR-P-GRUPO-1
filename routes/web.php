@@ -89,3 +89,4 @@ Route::group(['middleware' => 'App\Http\Middleware\Admin'], function() //Rota sÃ
 
 //Route::post('/musicas/download/', 'MusicasController@download')->middleware('auth'); 
 
+Route::post('/search', 'SearchController@user');

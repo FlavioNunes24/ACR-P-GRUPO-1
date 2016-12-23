@@ -10,7 +10,7 @@ class Album extends Model
 
 
 
-	public function musica()
+	public function musicas()
 	{
  		 return $this->belongsToMany('App\Musica','album_musica','album_id','musica_id');
 	}
