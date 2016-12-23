@@ -50,7 +50,9 @@
 				<th>Album</th>
 				<th>Lançado</th>
 				<th>Preço</th>
+				@if(Auth::check())
 				<th></th>
+				@endif
 			</tr>
 		</thead>
 		<tbody>
@@ -100,7 +102,9 @@
 				
 				<td>{{$musicas->data_lancamento}}</td>
 				<td>{{$musicas->preco}}</td>
+				@if(Auth::check())
 				<td><button type="button" onclick="efectuaCompra({{$musicas->id}})">Comprar</button></td>
+				@endif
 			</tr>
 	
 		@endforeach()
