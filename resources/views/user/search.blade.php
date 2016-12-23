@@ -7,6 +7,13 @@
 
 @section('content')
 <h1>Pesquisa</h1>
+<div id="myElem" class="alert alert-success" style="display:none">
+  <strong>A música foi comprada com sucesso!</strong>
+</div>
+
+<div id="myElem2" class="alert alert-danger" style="display:none">
+  <strong>A compra da música falhou!</strong>
+</div>
 @if(isset($musica))
 <h2>Música</h2>
 	<table class="table table-striped">
@@ -73,7 +80,20 @@
 				<td>{{$musicas->data_lancamento}}</td>
 				<td>{{$musicas->preco}}</td>
 				@if(Auth::check())
-				<td><button type="button" onclick="efectuaCompra({{$musicas->id}})">Comprar</button></td>
+				@php ($i=0)
+					@foreach($compras as $compra)
+						@foreach($compra->musica()->get() as $musica)
+							@if($musica->id == $musicas->id)
+								@php ($i=1)
+							@endif
+						@endforeach
+					@endforeach
+					@if($i == 0)
+						<td><button type="button" onclick="efectuaCompra({{$musicas->id}})">Comprar</button></td>
+					@else
+						<td><a href="/download/music/{{$musicas->path}}" download> Download
+						</a></td>
+					@endif
 				@endif
 			</tr>
 	
@@ -131,8 +151,21 @@
 					<td>{{$gravadoras->data_lancamento}}</td>
 					<td>{{$gravadoras->preco}}</td>
 					@if(Auth::check())
-					<td><button type="button" onclick="efectuaCompra({{$gravadoras->id}})">Comprar</button></td>
+				@php ($i=0)
+					@foreach($compras as $compra)
+						@foreach($compra->musica()->get() as $musica)
+							@if($musica->id == $gravadoras->id)
+								@php ($i=1)
+							@endif
+						@endforeach
+					@endforeach
+					@if($i == 0)
+						<td><button type="button" onclick="efectuaCompra({{$musicas->id}})">Comprar</button></td>
+					@else
+						<td><a href="/download/music/{{$gravadoras->path}}" download> Download
+						</a></td>
 					@endif
+				@endif
 				</tr>
 
 			@endforeach
@@ -144,6 +177,30 @@
 @if(isset($mensagem))
 	{{$mensagem}}
 @endif
+	
+	<script>
+		function efectuaCompra(id){
+			$.ajax({
+				type: "POST", 
+				data: {"id":id,
+					  "_token": "{{ csrf_token() }}"},
+				url: '/musicas/compra',
+				success: function (data) {
+					if(data.sucesso == 1)
+						{
+               				$("#myElem").show();
+               				setTimeout(function() { $("#myElem").hide(); }, 5000);
+						}
+						window.location.reload();
+        			},
+				error: function (data)
+				{
+					$("#myElem2").show();
+               				setTimeout(function() { $("#myElem2").hide(); }, 5000);
+				}
+			});
+		}
+	</script>
 
 	
 

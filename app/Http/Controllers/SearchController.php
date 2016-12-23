@@ -16,6 +16,11 @@ class SearchController extends Controller
 		//$musica = Musica::where('titulo', $dados)->orWhere('gravadora', $dados);
 		//dd($musica);
 		//echo $conta=count($musica);
+		if(\Auth::check())
+		{
+			$user = \Auth::user();
+			$compras = $user->compra()->get();
+		}
 		
 		$musica = Musica::where('titulo','LIKE','%'.$dados.'%')->get();
 		$gravadora = Musica::where('gravadora','LIKE','%'.$dados.'%')->get();
@@ -23,11 +28,11 @@ class SearchController extends Controller
 		//$artista = Artista::where('nome','LIKE','%'.$dados.'%')->get();
 		if(count($musica) > 0)
 		{
-			return view('user.search',compact('musica'));
+			return view('user.search',compact('musica','compras'));
 		}
 		elseif(count($gravadora) > 0)
 		{
-			return view('user.search',compact('gravadora'));
+			return view('user.search',compact('gravadora','compras'));
 		}
 		//elseif(count($album) > 0)
 		//{
@@ -43,4 +48,6 @@ class SearchController extends Controller
 			return view('user.search', compact('mensagem'));
 		}
 	}
+	
+	
 }

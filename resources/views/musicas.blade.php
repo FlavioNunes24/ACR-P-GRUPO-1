@@ -103,7 +103,20 @@
 				<td>{{$musicas->data_lancamento}}</td>
 				<td>{{$musicas->preco}}</td>
 				@if(Auth::check())
-				<td><button type="button" onclick="efectuaCompra({{$musicas->id}})">Comprar</button></td>
+				@php ($i=0)
+					@foreach($compras as $compra)
+						@foreach($compra->musica()->get() as $musica)
+							@if($musica->id == $musicas->id)
+								@php ($i=1)
+							@endif
+						@endforeach
+					@endforeach
+					@if($i == 0)
+						<td><button type="button" onclick="efectuaCompra({{$musicas->id}})">Comprar</button></td>
+					@else
+						<td><a href="/download/music/{{$musicas->path}}" download> Download
+						</a></td>
+					@endif
 				@endif
 			</tr>
 	
@@ -124,6 +137,7 @@
                				$("#myElem").show();
                				setTimeout(function() { $("#myElem").hide(); }, 5000);
 						}
+						window.location.reload();
         			},
 				error: function (data)
 				{

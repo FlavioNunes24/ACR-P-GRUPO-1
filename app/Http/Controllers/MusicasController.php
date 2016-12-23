@@ -24,6 +24,10 @@ class MusicasController extends Controller
 	public function show(Request $request)
 	{
 		$musica = Musica::all();
+		$user=\Auth::user();
+		
+		if($user)
+		$compras = $user->compra()->get();
 		
 		//$musica = Musica::find(1);
 		//$artista = Artista::with('musicas')->first();
@@ -31,7 +35,7 @@ class MusicasController extends Controller
 		//$compras = $user->compra()->get();
 		
 
-	return view('musicas',compact('musica'));
+	return view('musicas',compact('musica','compras'));
 	}
 	
 	public function compra(Request $request)
