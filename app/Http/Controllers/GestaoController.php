@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \Input as Input;
-
 use App\Musica;
 use App\Genero;
 class GestaoController extends Controller

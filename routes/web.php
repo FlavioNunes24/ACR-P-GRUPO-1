@@ -34,6 +34,7 @@ Route::get('/musicas', 'MusicasController@show');
 Route::get('/top', 'TopController@index');
 
 Route::get('/suporte', 'SuporteController@index');
+Route::post('/suporte', 'SuporteController@enviarMensagem');
 
 //Route::get('/gestao', 'GestaoController@index');
 
