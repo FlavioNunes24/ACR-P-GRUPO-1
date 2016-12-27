@@ -37,7 +37,7 @@
 		@foreach($musica as $musicas)
 				<tr>
 				@foreach($musicas->album()->get() as $album)
-				<td>	<a href="#">
+				<td>	<a href="/album/{{$album->id}}">
                       		<img src ="/images/{{$album->pathImagem}}" id = "album">
                     	</a>
 
@@ -73,7 +73,7 @@
 
 				@foreach($musicas->album()->get() as $album)
 				<td>
-					{{$album->nome}}
+				<a href="/album/{{$album->id}}">{{$album->nome}} </a>
 				</td>
 				@endforeach
 				

@@ -71,6 +71,11 @@ Route::get('/gestao/album', 'GestaoController@gestaoAlbum');
 Route::post('/gestao/album', 'GestaoController@adicionaAlbum');
 
 
+//rota para mostrar a pagina de um album
+Route::get('/album/{id}','MusicasController@album');
+Route::get('/artista/{id}','MusicasController@artista');
+
+
 /*Route::group(['middleware' => 'App\Http\Middleware\Admin'], function() //Rota só para admin
 {
 	Route::get('/user/{id}','GestaoController@show');

@@ -60,8 +60,8 @@
 				
 				<tr>
 				@foreach($musicas->album()->get() as $album)
-				<td>	<a href="#">
-                      		<img src ="/images/{{$album->pathImagem}}" id = "album">
+				<td>	<a href="album/{{$album->id}}">
+                      		<img src ="/images/album/{{$album->pathImagem}}" id = "album">
                     	</a>
 
 
@@ -77,7 +77,7 @@
 				@if($a->count() > 1)
 				
 				@foreach($musicas->artistas()->get() as $artistas)
-				{{$artistas->nome}},
+				<a href="artista/{{$artistas->id}}">{{$artistas->nome}}, </a>	
 				@endforeach
 				
 				@endif
@@ -85,7 +85,7 @@
 				@if($a->count() == 1)
 
 				@foreach($musicas->artistas()->get() as $artistas)
-				{{$artistas->nome}}
+				<a href="artista/{{$artistas->id}}">{{$artistas->nome}} </a>
 				@endforeach
 
 				@endif
@@ -96,7 +96,7 @@
 
 				@foreach($musicas->album()->get() as $album)
 				<td>
-					{{$album->nome}}
+				<a href="album/{{$album->id}}">	{{$album->nome}} </a>
 				</td>
 				@endforeach
 				
@@ -114,7 +114,7 @@
 					@if($i == 0)
 						<td><button type="button" onclick="efectuaCompra({{$musicas->id}})">Comprar</button></td>
 					@else
-						<td><a href="/download/music/{{$musicas->path}}" download> Download
+						<td><a href="/download/music/{{$musicas->path}}" download> <button>Download</button> 
 						</a></td>
 					@endif
 				@endif
