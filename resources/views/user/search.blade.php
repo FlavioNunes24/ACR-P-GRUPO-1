@@ -160,7 +160,7 @@
 						@endforeach
 					@endforeach
 					@if($i == 0)
-						<td><button type="button" onclick="efectuaCompra({{$musicas->id}})">Comprar</button></td>
+						<td><button type="button" onclick="efectuaCompra({{$gravadoras->id}})">Comprar</button></td>
 					@else
 						<td><a href="/download/music/{{$gravadoras->path}}" download> Download
 						</a></td>
@@ -172,7 +172,137 @@
 			</tbody>
 		</table>
 @endif
+	
+@if(isset($album_musica))
+	<h2>Albums</h2>
+	<table class="table table-striped">
+			<thead>
+				<tr>
 
+					<th></th>
+					<th>Título</th>
+					<th>Artistas</th>
+					<th>Gravadora</th>
+					<th>Gênero</th>
+					<th>Album</th>
+					<th>Lançado</th>
+					<th>Preço</th>
+					@if(Auth::check())
+					<th></th>
+					@endif
+				</tr>
+			</thead>
+			<tbody>
+				@foreach($album_musica as $album_musicas)
+					<tr>
+						@foreach($album_musicas->album()->get() as $albums_musicas)
+							<td>	<a href="#">
+								<img src ="/images/{{$albums_musicas->pathImagem}}" id = "album">
+							</a>
+							</td>
+						@endforeach
+						<td>{{$album_musicas->titulo}}</td>
+						<td>				
+						@foreach($album_musicas->artistas()->get() as $artistas)
+							{{$artistas->nome}},
+						@endforeach
+						</td>
+						<td>{{$album_musicas->gravadora}}</td>
+						<td>{{App\Genero::find($album_musicas->genero_id)->nome}}</td>
+						@foreach($album_musicas->album()->get() as $album)
+						<td>
+							{{$album->nome}}
+						</td>
+						@endforeach
+						<td>{{$album_musicas->data_lancamento}}</td>
+						<td>{{$album_musicas->preco}}</td>
+						@if(Auth::check())
+					@php ($i=0)
+						@foreach($compras as $compra)
+							@foreach($compra->musica()->get() as $musica)
+								@if($musica->id == $album_musicas->id)
+									@php ($i=1)
+								@endif
+							@endforeach
+						@endforeach
+						@if($i == 0)
+							<td><button type="button" onclick="efectuaCompra({{$album_musicas->id}})">Comprar</button></td>
+						@else
+							<td><a href="/download/music/{{$album_musicas->path}}" download> Download
+							</a></td>
+						@endif
+					@endif
+					</tr>
+				@endforeach
+			</tbody>
+	</table>
+@endif
+
+@if(isset($artistas_musica))
+	<h2>Artistas</h2>
+	<table class="table table-striped">
+			<thead>
+				<tr>
+
+					<th></th>
+					<th>Título</th>
+					<th>Artistas</th>
+					<th>Gravadora</th>
+					<th>Gênero</th>
+					<th>Album</th>
+					<th>Lançado</th>
+					<th>Preço</th>
+					@if(Auth::check())
+					<th></th>
+					@endif
+				</tr>
+			</thead>
+			<tbody>
+				@foreach($artistas_musica as $artistas_musicas)
+					<tr>
+						@foreach($artistas_musicas->album()->get() as $artista_musicas)
+							<td>	<a href="#">
+								<img src ="/images/{{$artista_musicas->pathImagem}}" id = "album">
+							</a>
+							</td>
+						@endforeach
+						<td>{{$artistas_musicas->titulo}}</td>
+						<td>				
+						@foreach($artistas_musicas->artistas()->get() as $artistas)
+							{{$artistas->nome}},
+						@endforeach
+						</td>
+						<td>{{$artistas_musicas->gravadora}}</td>
+						<td>{{App\Genero::find($artistas_musicas->genero_id)->nome}}</td>
+						@foreach($artistas_musicas->album()->get() as $album)
+						<td>
+							{{$album->nome}}
+						</td>
+						@endforeach
+						<td>{{$artistas_musicas->data_lancamento}}</td>
+						<td>{{$artistas_musicas->preco}}</td>
+						@if(Auth::check())
+					@php ($i=0)
+						@foreach($compras as $compra)
+							@foreach($compra->musica()->get() as $musica)
+								@if($musica->id == $artistas_musicas->id)
+									@php ($i=1)
+								@endif
+							@endforeach
+						@endforeach
+						@if($i == 0)
+							<td><button type="button" onclick="efectuaCompra({{$artistas_musicas->id}})">Comprar</button></td>
+						@else
+							<td><a href="/download/music/{{$artistas_musicas->path}}" download> Download
+							</a></td>
+						@endif
+					@endif
+					</tr>
+				@endforeach
+			</tbody>
+	</table>
+	
+@endif
 	
 @if(isset($mensagem))
 	{{$mensagem}}

@@ -123,7 +123,6 @@
       <li><a href="/gestaoMusicas">Gestão de Músicas</a></li>
       <li><a href="/gestao/adicionar">Gêneros</a></li>
       <li><a href="/gestao/album">Gestão de album</a></li>
-
     </ul>
   </div>
 </nav>
