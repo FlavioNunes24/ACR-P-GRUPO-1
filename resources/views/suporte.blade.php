@@ -13,9 +13,9 @@
 <div class="container">
   <div class="panel-group" id="accordion">
     <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Quem Somos?</a>
+      <div class="panel-heading" id = "head">
+        <h4 class="panel-title" >
+          <a data-toggle="collapse" class="titulo-collapse" data-parent="#accordion" href="#collapse1">Quem Somos?</a>
         </h4>
       </div>
       <div id="collapse1" class="panel-collapse collapse in">
@@ -52,10 +52,12 @@
         </div>
       </div>
     </div>
+
+
     <div class="panel panel-default">
-      <div class="panel-heading">
+      <div class="panel-heading" id = "head">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Perguntas Frequentes</a>
+          <a data-toggle="collapse" class="titulo-collapse" data-parent="#accordion" href="#collapse2">Perguntas Frequentes</a>
         </h4>
       </div>
       <div id="collapse2" class="panel-collapse collapse">
@@ -89,10 +91,12 @@
         </div>
       </div>
     </div>
+
+
     <div class="panel panel-default">
-      <div class="panel-heading">
+      <div class="panel-heading" id = "head">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Contacto</a>
+          <a data-toggle="collapse" class="titulo-collapse" data-parent="#accordion" href="#collapse3">Contacto</a>
         </h4>
       </div>
       <div id="collapse3" class="panel-collapse collapse">
@@ -129,4 +133,5 @@
     </div>
   </div> 
 </div>
+
 @endsection

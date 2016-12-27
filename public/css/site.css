@@ -26,3 +26,22 @@
 p{
 	text-align: justify;
 }
+
+.titulo-collapse{
+
+	font-weight: bold;
+}
+
+#head{
+	color: #333;
+    background-color: #edeeef;
+    border-color: #ddd;
+}
+
+
+a{
+	font-family:inherit;
+	font-weight:500;
+	color:inherit
+}
+

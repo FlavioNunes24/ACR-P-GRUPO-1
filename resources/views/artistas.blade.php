@@ -62,6 +62,7 @@
 						<td>{{$musicas->duracao}}</td>
 						<td>{{$musicas->data_lancamento}}</td>	
 						<td>{{$musicas->preco}}</td>
+			
 			@if(Auth::check())
 				@php ($i=0)
 					@foreach($compras as $compra)
@@ -85,10 +86,6 @@
 </table>	
 	
 </div>
-
-@if(isset($mensagem))
-	{{$mensagem}}
-@endif
 
 	<script>
 		function efectuaCompra(id){
