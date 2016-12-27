@@ -60,15 +60,15 @@ Route::group(['middleware' => ['auth','admin']], function () {
 Route::get('/artistas/{id}', 'PagesController@artistas');
 
 
-Route::get('/perfil/editar/{id}','PerfilController@editar');
+Route::get('/perfil/editar/{id}','PerfilController@editar')->middleware('auth'); //Já está protegido contra outros utilizadores
 
 Route::post('/perfil/{id}','PerfilController@confirmar');
 
-Route::get('/gestao/adicionar', 'GestaoController@adicionar');
-Route::post('/gestao/guardar', 'GestaoController@guardar');
+Route::get('/gestao/adicionar', 'GestaoController@adicionar')->middleware('auth','admin');;
+Route::post('/gestao/guardar', 'GestaoController@guardar')->middleware('auth','admin');;
 
-Route::get('/gestao/album', 'GestaoController@gestaoAlbum');
-Route::post('/gestao/album', 'GestaoController@adicionaAlbum');
+Route::get('/gestao/album', 'GestaoController@gestaoAlbum')->middleware('auth','admin');;
+Route::post('/gestao/album', 'GestaoController@adicionaAlbum')->middleware('auth','admin');;
 
 
 /*Route::group(['middleware' => 'App\Http\Middleware\Admin'], function() //Rota só para admin

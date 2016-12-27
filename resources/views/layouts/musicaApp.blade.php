@@ -23,7 +23,7 @@
         ]); ?>
     </script>
 </head>
-<body>
+<body background="/images/maxresdefault.jpg">
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
@@ -107,6 +107,7 @@
                 </div>
             </div>
         </nav>
+        <div class="container2">
 		<div class="container">
 
     <h1>Gestão de Conteudo</h1>
@@ -130,6 +131,7 @@
         	@yield('content')
 		</div>
     </div>
+		</div>
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
