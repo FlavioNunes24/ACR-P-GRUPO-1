@@ -28,8 +28,15 @@ class PerfilController extends Controller
 
 	public function editar(Request $request,$id)
 	{
+		if($request->user()->tipo_utilizador == 2 || $request->user()->id == $id)
+		{
 		$user = \Auth::user()->find($id);
 		return view('editar',compact('user'));
+		}
+		else
+		{
+			return redirect('/');
+		}
 	}
 
 	public function confirmar(Request $request, $id)

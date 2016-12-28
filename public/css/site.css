@@ -5,20 +5,17 @@
 
 }
 
+ul.nav a{color:black !important;}
+a.navbar-brand {color:black !important;}
+
+body{
+	color: black;	
+}
 
 #album{
 
 	height: 6%; 
-
 }
 
 
-.foto{
 
-	width:200px; 
-	height:200px; 
-	float:left; 
-	border-radius:20% 50%; 
-	margin-bottom:50px; 
-	margin-top:10px;";
-}

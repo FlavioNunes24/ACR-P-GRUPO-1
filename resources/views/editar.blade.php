@@ -303,11 +303,13 @@
 		<label>Password: </label><br>
 		<input type="password" name="password" class="form-control" value ="{{$user->password}}"readonly >
 		</div>
-
+		
+		@if(Auth::user()->tipo_utilizador == 2)
 		<div class="form-group">
 		<label>Saldo: </label><br>
-		<input type="text" name="saldo" class="form-control" value ="{{$user->saldo}}" readonly>
+		<input type="text" name="saldo" class="form-control" value ="{{$user->saldo}}">
 		</div>
+		@endif
 	<input type="hidden" name="_token" value="{{csrf_token()}}">
 	<!-- <input type="hidden" name="user_id" value="{{$user->id}}">-->
 	<button type="submit" class="btn btn-primary"> Guardar</button>

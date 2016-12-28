@@ -6,6 +6,12 @@
 
 
 @section('content')
+	<center><a><form action="/search_ad" method="POST" role="search">
+		{{ csrf_field() }}
+			<input class="form-control input-sm" type="text" name="q_admin"
+				   placeholder="Procurar utilizadores registados" style="width: 500px; height: 35px">
+		</form>
+   </a></center>
 <!--	<button onclick="goBack()">«Voltar Atrás</button>
 			<script>
 					function goBack() {
