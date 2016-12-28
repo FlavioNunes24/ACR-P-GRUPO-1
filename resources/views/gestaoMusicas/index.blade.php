@@ -12,17 +12,16 @@
 	@endif
 
 	
-<div class = "panel panel-default">
-	
-		<div class = "panel-body">
 		
 				<table class = "table table-striped">
-					
+				<thead>	
 				<tr>
 					<th>Nº</th>
 					<th>Titulo</th>
 					<th>Acção</th>
 				</tr>
+				</thead>
+				<tbody>
 
 				<?php $n=0; ?>
 
@@ -46,12 +45,13 @@
 
 				</td>
 				</tr>
+				</tbody>
 				@endforeach
-				</table
-		</div>
-</div>
-</div>
+</table>
+
 
 <a href="{{route('gestaoMusicas.create')}}" class = "btn btn-success"> Adicionar nova Música</a>
+<br>
+<br>
 
 @endsection

@@ -6,6 +6,7 @@
 
 
 @section('content')
+	<div class="row">
 	<center><a><form action="/search_ad" method="POST" role="search">
 		{{ csrf_field() }}
 			<input class="form-control input-sm" type="text" name="q_admin"
@@ -30,6 +31,9 @@
 	<?php $id = $tipo->id?>
 	@if($id==2)
 		<a href="#" class = "btn btn-success"> Adicionar novo Administrador</a>
+		<br>
 	@endif
+	<br>
+</div>
 
 @endsection
