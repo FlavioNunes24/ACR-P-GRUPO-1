@@ -97,4 +97,8 @@ class PagesController extends Controller
 	{
 		return view('perfil');
 	} */
+	
+	public function download($caminho)
+	{
+	}
 }
