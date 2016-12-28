@@ -100,9 +100,7 @@ class MusicasController extends Controller
 		
 		
 	} */
-
-
-
+	
 	public function album($id)
 	{
 		$compras = Compra::all();

@@ -23,7 +23,7 @@
         ]); ?>
     </script>
 </head>
-<body>
+<body background="/images/maxresdefault.jpg">
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
@@ -107,6 +107,7 @@
                 </div>
             </div>
         </nav>
+        <div class="container2">
 		<div class="container">
 
     <h1>Gestão de Conteudo</h1>
@@ -123,7 +124,6 @@
       <li><a href="/gestaoMusicas">Gestão de Músicas</a></li>
       <li><a href="/gestao/adicionar">Gêneros</a></li>
       <li><a href="/gestao/album">Gestão de album</a></li>
-
     </ul>
   </div>
 </nav>
@@ -131,6 +131,7 @@
         	@yield('content')
 		</div>
     </div>
+		</div>
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>

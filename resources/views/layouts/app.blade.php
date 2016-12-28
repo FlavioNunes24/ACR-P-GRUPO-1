@@ -23,7 +23,7 @@
         ]); ?>
     </script>
 </head>
-<body>
+<body background="/images/maxresdefault.jpg">
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
@@ -112,11 +112,10 @@
                 </div>
             </div>
         </nav>
+        <div class="container2">
 		<div class="container">
-
-
-        
         	@yield('content')
+		</div>
 		</div>
     </div>
 
