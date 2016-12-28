@@ -44,4 +44,5 @@ class Musica extends Model
   {
     return $this->belongsToMany('App\Album','album_musica','musica_id','album_id');
   }
+
 }
