@@ -18,4 +18,22 @@ body{
 }
 
 
+.foto{
 
+	width:200px; 
+	height:200px; 
+	float:left; 
+	border-radius:20% 50%; 
+	margin-bottom:50px; 
+	margin-top:10px;";
+}
+
+
+
+
+
+.container2{
+	background: rgba(225, 225, 225, .9);
+	margin-right: auto;
+    margin-left: auto;
+}
