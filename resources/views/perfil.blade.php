@@ -33,8 +33,11 @@
 
 <br>
 <a href="/perfil/editar/{{$user->id}}" class = "btn btn-primary"> Editar dados</a>
+<br>
+<br>
 
 </div>
+
 
 <!--musicas-->
 
