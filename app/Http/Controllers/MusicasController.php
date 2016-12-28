@@ -9,6 +9,7 @@ use App\Artista;
 
 
 use App\Compra;
+use App\Album;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -99,4 +100,18 @@ class MusicasController extends Controller
 		
 		
 	} */
+	
+	public function album($id)
+	{
+		$compras = Compra::all();
+		$album = Album::find($id);
+		return view('album',compact('album', 'compras'));
+	}
+
+	public function artista($id)
+	{
+		$artista = Artista::find($id);
+		$compras = Compra::all();
+		return view('artistas',compact('artista','compras'));	
+	}
 }
