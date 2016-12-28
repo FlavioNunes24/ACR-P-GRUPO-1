@@ -66,6 +66,7 @@ Route::get('/perfil/editar/{id}','PerfilController@editar')->middleware('auth');
 Route::post('/perfil/{id}','PerfilController@confirmar');
 
 Route::get('/gestao/adicionar', 'GestaoController@adicionar')->middleware('auth','admin');;
+Route::get('/gestao/remover/{genero}','GestaoController@remover');
 Route::post('/gestao/guardar', 'GestaoController@guardar')->middleware('auth','admin');;
 
 Route::get('/gestao/album', 'GestaoController@gestaoAlbum')->middleware('auth','admin');;

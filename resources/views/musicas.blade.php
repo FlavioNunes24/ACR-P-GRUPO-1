@@ -91,6 +91,7 @@
 				</td>
 			
 				<td>{{$musicas->gravadora}}</td>
+
 				<td>{{App\Genero::find($musicas->genero_id)->nome}}</td>
 
 				@foreach($musicas->album()->get() as $album)

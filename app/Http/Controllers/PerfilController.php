@@ -42,16 +42,21 @@ class PerfilController extends Controller
 	public function confirmar(Request $request, $id)
 	{
 			
-			/*$this->validate($request, [
 
+            //validação de dados
+            $this->validate($request, [
+
+            
             'name' => 'required|max:255',
-            'username' => 'required|max:20|unique:users',
-            'email' => 'required|email|max:255',
-            //'data_nasc' => 'required',
+            'username' => 'required|max:20|unique:users,username,'.$request->id,
+            'data_nasc' => 'required|before:now',
             'pais' => 'required|max:20',
-            ]);*/
-				
+            'email' => 'required|unique:users,email,'.$request->id,
+            ]);
+            //inserção dos dados    
             $user = User::findOrFail($id);
+
+
 
             $user->name = $request->name;
             $user->username = $request->username;

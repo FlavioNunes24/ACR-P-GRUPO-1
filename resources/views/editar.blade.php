@@ -17,17 +17,37 @@
 		<div class="form-group">
 		<label>Nome: </label><br>
 		<input type="text" name="name" class="form-control" value ="{{$user->name}}">
+
+	    @if ($errors->has('name'))
+        <span class="help-block">
+        <strong>{{ $errors->first('name') }}</strong>
+        </span>
+        @endif
+		
 		</div>
 
 		<div class="form-group">
 		<label>Username: </label><br>
 		<input type="text" name="username" class="form-control" value ="{{$user->username}}">
+		
+		@if ($errors->has('username'))
+        <span class="help-block">
+        <strong>{{ $errors->first('username') }}</strong>
+        </span>
+        @endif
+		
 		</div>
 
 		<div class="form-group">
 		<label>Email: </label><br>
 		<input type="text" name="email" class="form-control" value ="{{$user->email}}">
 		</div>
+
+		@if ($errors->has('email'))
+        <span class="help-block">
+        <strong>{{ $errors->first('email') }}</strong>
+        </span>
+        @endif
 
 		<div class="form-group">
 		<label>Pais: </label><br>
@@ -297,6 +317,12 @@
 		<div class="form-group">
 		<label>Data de nascimento: </label><br>
 		<input type="date" name="data_nasc" class="form-control" value ="{{$user->data_nasc}}">
+		@if ($errors->has('data_nasc'))
+        <span class="help-block">
+        <strong>{{ $errors->first('data_nasc') }}</strong>
+        </span>
+        @endif
+
 		</div>
 
 		<div class="form-group">
@@ -309,6 +335,9 @@
 		<label>Saldo: </label><br>
 		<input type="text" name="saldo" class="form-control" value ="{{$user->saldo}}">
 		</div>
+		@endif
+		@if(Auth::user()->tipo_utilizador == 1)
+		<input type="hidden" name="saldo" class="form-control" value ="{{$user->saldo}}">
 		@endif
 	<input type="hidden" name="_token" value="{{csrf_token()}}">
 	<!-- <input type="hidden" name="user_id" value="{{$user->id}}">-->
