@@ -19,6 +19,7 @@ class Artista extends Model
 	{
 		return $this->belongsToMany('App\Album', 'album_artista', 'artista_id', 'album_id');
 	}
+	
 
 
 

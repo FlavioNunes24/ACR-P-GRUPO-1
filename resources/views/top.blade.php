@@ -94,7 +94,6 @@
 	</tbody>
 </table>
 
-<h2>Top artistas</h2>
 
 <script>
 		function efectuaCompra(id){
