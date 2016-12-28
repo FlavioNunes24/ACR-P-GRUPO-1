@@ -5,7 +5,9 @@
 @endsection
 
 @section('content')
-
+@if(Session::has('message'))
+	<div class="alert alert-success">{{Session::get('message')}}</div>
+	@endif
 
 <div class="row">
 	<div class="col-md-6">
@@ -21,15 +23,6 @@
 		<input type="date" name="data_lancamento" class="form-control" >
 		</div>
 
-		<div class="form-group">
-		<label>Artista: </label><br>
-		<input type="text" name="artista" class="form-control">
-		</div>
-
-		<div class="form-group">
-		<label>Preço: </label><br>
-		<input type="text" name="preco" class="form-control">
-		</div>
 
 		<div class="form-group">
 		<label>Imagem do album: </label>
