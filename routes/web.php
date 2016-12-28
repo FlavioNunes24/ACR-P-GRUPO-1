@@ -97,3 +97,5 @@ Route::group(['middleware' => 'App\Http\Middleware\Admin'], function() //Rota sÃ
 
 Route::post('/search', 'SearchController@user');
 Route::post('/search_ad', 'SearchController@admin')->middleware('auth', 'admin');
+
+Route::get('/download/music/{caminho}', 'PagesController@download')->middleware('auth');
