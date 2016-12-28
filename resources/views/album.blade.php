@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('title')
-	<title>Music Planet - Artista</title>
+	<title>Music Planet - Album</title>
 @endsection
 
 @section('content')
-<h1>{{$artista->nome}}</h1>
+<h1>{{$album->nome}}</h1>
 <div id="myElem" class="alert alert-success" style="display:none">
   <strong>A música foi comprada com sucesso!</strong>
 </div>
@@ -23,19 +23,20 @@
 			}
 			</script>
 	<br>
-	<img src="/images/artista/{{$artista->pathImagem}}" class = "foto">
+	<img src="/images/album/{{$album->pathImagem}}" class = "foto" >
 </div>
 <div class="col-sm-3">
 	<h2>Dados: </h2>
 	<hr>
 
 	
-	<p> <strong>Nome: </strong>{{$artista->nome}} <p>
+	<p> <strong>Nome: </strong>{{$album->nome}} <p>
+	<p> <strong>Data de Lançamento: </strong>{{$album->data_lancamento}} <p>
 	
-	<p> <strong>Albuns: </strong>@foreach($artista->album()->get() as $albuns) {{$albuns->nome}}, @endforeach</p>
+	<p> <strong>Artistas: </strong>@foreach($album->artista()->get() as $artistas) {{$artistas->nome}}, @endforeach</p>
 
 
-	<p><strong>Numero de Músicas:</strong> {{$a = $artista->musicas()->count()}} </p> 
+	<p><strong>Numero de Músicas:</strong> {{$a = $album->musicas()->count()}} </p> 
 	
 </div>
 	
@@ -50,18 +51,18 @@
 				<th>Duração</th>
 				<th>Data de Lançamento</th>
 				<th>Preço</th>
-				<th></th>
 			</tr>
 		</thead>
 
 			<tr>
 				
-			@foreach($artista->musicas()->get() as $musicas)
+			@foreach($album->musicas()->get() as $musicas)
 
 						<td>{{$musicas->titulo}}</td>
 						<td>{{$musicas->duracao}}</td>
 						<td>{{$musicas->data_lancamento}}</td>	
 						<td>{{$musicas->preco}}</td>
+			
 			@if(Auth::check())
 				@php ($i=0)
 					@foreach($compras as $compra)
@@ -79,6 +80,7 @@
 					@endif
 				@endif
 
+
 			</tr>	
 		@endforeach
 
@@ -86,9 +88,7 @@
 	
 </div>
 
-@if(isset($mensagem))
-	{{$mensagem}}
-@endif
+
 
 	<script>
 		function efectuaCompra(id){
@@ -112,6 +112,6 @@
 				}
 			});
 		}
-	</script>
+</script>
 
 @endsection
