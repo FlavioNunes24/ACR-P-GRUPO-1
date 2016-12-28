@@ -38,6 +38,7 @@
 					<td>{{$user->data_nasc}}</td>
 					<td>{{$user->email}}</td>
 					<td>{{$user->saldo}}</td>
+					<td><a class="btn btn-success" href="/perfil/editar/{{$user->id}}">Editar</a></td>
 			</tr>
 		</tbody>
 	</table>
