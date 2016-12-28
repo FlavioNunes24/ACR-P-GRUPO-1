@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use \Input as Input;
 use App\Musica;
 use App\Genero;
+use App\Album;
 class GestaoController extends Controller
 {
     public function index()
@@ -117,9 +118,8 @@ class GestaoController extends Controller
 	}
 
 
-	public function adicionaAlbum()
+	public function adicionaAlbum(Request $request)
 	{
-
-		return redirect('/gestao/album');
+		return redirect('/gestao/album')->with('message','Album criado com sucesso!');
 	}
 }
