@@ -46,7 +46,17 @@ a{
 }
 
 .container2{
-	background: rgba(225, 225, 225, .9);
+	background: rgba(225, 225, 225, .91);
 	margin-right: auto;
     margin-left: auto;
 }
+
+body {
+	color: black;
+}
+
+a.navbar-brand {
+	color:black;
+}
+
+ul.nav a{color:black !important;}
