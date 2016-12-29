@@ -15,6 +15,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootsrap/3.3.4/css/bootstrap.min.css">
     <link href="/css/app.css" rel="stylesheet">
     <link href="/css/site.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    
 
     <!-- Scripts -->
     <script>
@@ -23,7 +25,7 @@
         ]); ?>
     </script>
 </head>
-<body background="/images/maxresdefault.jpg">
+<body>
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
@@ -39,7 +41,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                      <img src ="/images/musica.png" id = "logo">
+                      <img src ="/images/logo_musicplanet.png" id = "logo">
                     </a>
                     <a class="navbar-brand" href="{{ url('/musicas') }}">
                       Músicas
@@ -112,7 +114,9 @@
                 </div>
             </div>
         </nav>
+        @yield('slideshow')
         <div class="container2">
+        	
 		<div class="container">
         	@yield('content')
 		</div>
