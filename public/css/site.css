@@ -69,14 +69,66 @@ a.navbar-brand {
 
 ul.nav a{color:black !important;}
 
-<<<<<<< HEAD
 
-
-
-
-=======
 .mySlides {
 	width: 100%;
 	height: 600px;
 }
->>>>>>> origin/master
+
+
+.btn-compra{
+    background-color: #ff6900;
+    border: medium none;
+    color: #fff;
+    padding: 8px 25px;
+    border-radius: 10px;
+    text-align: center;
+    font-family: "Arial";
+    font-weight: bold;
+}
+
+.btn-compra:hover {
+    background-color: #F26B0C;
+    color: white;
+}
+
+.btn-download{
+	background-color: #171717;
+    border: medium none;
+    color: #fff;
+    padding: 7px 20px;
+    border-radius: 5px;
+    font-family: "Arial";
+    font-weight: bold;
+    text-align: center;
+}
+
+.btn-download:hover {
+    background-color: #262524;
+    color: white;
+}
+
+
+
+
+.hit-the-floor {
+
+  text-align:left;
+  font-size:4em;
+  color:#797C7D;
+  letter-spacing: -2px;
+  font-weight:900;
+  text-transform:uppercase;
+  text-shadow:0px 0px 1px #C5C8C9,
+      0px 0px 7px #fff;
+}
+
+td{
+
+	font-family: Verdana;
+
+    vertical-align:middle;
+}
+
+
+
