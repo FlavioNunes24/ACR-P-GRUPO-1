@@ -38,12 +38,28 @@
 		@foreach($abc->sortByDesc('compra_count') as $abcd)
 		<tr>
 			@foreach($abcd->album()->get() as $album)
-			<td>
-				<a href="album/{{$album->id}}">
-					<img src ="/images/album/{{$album->pathImagem}}" id = "album">
-				</a>
-			</td>
+
+				@if($abcd->album()->count() == 1)
+				<td>
+
+					<a href="album/{{$album->id}}">
+                   	 	<img src ="/images/album/{{$album->pathImagem}}" id = "album">
+               		</a>
+
+                </td>
+				@endif
 			@endforeach
+				@if($abcd->album()->count() > 1)
+				<td>
+					<a href="album/{{$album->id}}">
+                   	 	<img src ="/images/album/{{$album->pathImagem}}" id = "album">
+               		</a>
+
+                </td>
+
+				@endif
+
+
 			<td>{{$abcd->titulo}}</td>
 			<td>
 				<?php $a=$abcd->artistas()->get() ?>
@@ -66,11 +82,13 @@
 			</td>
 			<td>{{$abcd->gravadora}}</td>
 			<td>{{App\Genero::find($abcd->genero_id)->nome}}</td>
-			@foreach($abcd->album()->get() as $album)
+			
 				<td>
-				<a href="album/{{$album->id}}">	{{$album->nome}} </a>
+				@foreach($abcd->album()->get() as $album)
+				<a href="album/{{$album->id}}">	{{$album->nome}}, </a>
+				@endforeach
 				</td>
-			@endforeach
+
 			<td>{{$abcd->data_lancamento}}</td>
 			<td>{{$abcd->preco}}</td>
 			@if(Auth::check())
@@ -83,9 +101,9 @@
 						@endforeach
 					@endforeach
 					@if($i == 0)
-						<td><button type="button" onclick="efectuaCompra({{$abcd->id}})">Comprar</button></td>
+						<td><button class = "btn-compra"type="button" onclick="efectuaCompra({{$abcd->id}})">Comprar</button></td>
 					@else
-						<td><a href="/download/music/{{$abcd->path}}" download> <button>Download</button> 
+						<td><a href="/download/music/{{$abcd->path}}" download> <button class = "btn-download">Download</button> 
 						</a></td>
 					@endif
 				@endif

@@ -15,7 +15,7 @@
 				<tr>
 					<th>Nº</th>
 					<th>Nome</th>
-					<th></th>
+
 				</tr>
 				</thead>
 
@@ -24,11 +24,7 @@
 				<tr>
 					<td>{{$generos->id}}</td>
 					<td>{{$generos->nome}}</td>
-					<td>					
 
-					<a  class = "btn btn-danger" href="/gestao/remover/{{$generos->id}}"> Eliminar </a>
-
-					</td>
 				</tr>
 				@endforeach
 				

@@ -7,6 +7,7 @@ use \Input as Input;
 use App\Musica;
 use App\Genero;
 use App\Album;
+use App\Artista;
 class GestaoController extends Controller
 {
     public function index()
@@ -32,12 +33,6 @@ class GestaoController extends Controller
 		return view('tipo.show',compact('tipo', 'registado','tipo_utilizadores'));
 		
 	}
-
-
-	//public function ficheiro()
-	//{
-	//	return view('gestao');
-	//	}
 
 	public function upload(Request $request)
 	{
@@ -92,7 +87,8 @@ class GestaoController extends Controller
 	{
 		$tipo_utilizadores = \App\tipo_utilizadores::all();
 		$artistas = \App\Artista::all();
-		return view('gestao.album', compact('tipo_utilizadores','artistas'));
+		$album = Album::all();
+		return view('gestao.album', compact('tipo_utilizadores','artistas','album'));
 	}
 
 
@@ -109,6 +105,12 @@ class GestaoController extends Controller
 
 	public function guardar(Request $request)	
 	{
+		$this->validate($request, [
+
+            'genero' => 'required|max:255',
+            
+  			]);
+
 		$genero = new Genero;
 
 		$genero->nome = $request->genero;
@@ -118,8 +120,85 @@ class GestaoController extends Controller
 	}
 
 
+
 	public function adicionaAlbum(Request $request)
 	{
+
+		
+		 $this->validate($request, [
+
+            'nome' => 'required|max:255',
+            'data_lancamento' => 'required|before:now',
+            'file' =>'required',
+  			]);
+
+		$album = new Album;
+
+		$album->nome = $request->nome;
+		$album->data_lancamento = $request->data_lancamento;
+		$album->artista_id = '1';
+		$album->preco = '12';
+		if(Input::hasFile('file')){
+			$file = $request->file;
+			$file ->move(public_path().'/images/album',$file->getClientOriginalName());
+
+			$nome = $file->getClientOriginalName();
+			$album -> pathImagem = $nome;
+		}
+
+		$album->save();		
+
 		return redirect('/gestao/album')->with('message','Album criado com sucesso!');
 	}
+
+
+	public function artista()
+	{
+		$tipo_utilizadores = \App\tipo_utilizadores::all();
+		$artista = Artista::all();
+		return view ('gestao.artista', compact('tipo_utilizadores', 'artista'));
+	}
+
+	public function adicionaArtista(Request $request)
+	{
+		$artista = new Artista;
+
+		$artista->nome = $request->nome;
+		
+		if(Input::hasFile('file')){
+			$file = $request->file;
+			$file ->move(public_path().'/images/artista',$file->getClientOriginalName());
+
+			$nome = $file->getClientOriginalName();
+			$artista-> pathImagem = $nome;
+		}
+
+		$artista->save();
+
+		return redirect('/gestao/artista')->with('message','Artista criado com sucesso!');		
+
+	}
+
+	public function removerAlbum(Request $request, $id)
+	{
+		$album = Album::find($id);
+		$album->musicas()->detach();
+		$album->artista()->detach();
+
+		$album->delete();
+		return redirect('/gestao/album');
+
+	}
+
+	public function removerArtista(Request $request, $id)
+	{
+		$artista = Artista::find($id);
+		$artista->musicas()->detach();
+		$artista->album()->detach();
+
+		$artista->delete();
+		return redirect('/gestao/artista');
+
+	}
+
 }

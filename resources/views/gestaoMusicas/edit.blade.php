@@ -22,7 +22,7 @@
 
 <div class="row">
 	<div class="col-md-6">	
-	<form class="" action="{{route('gestaoMusicas.update',$musica->id)}}" method="post">
+	<form class="" action="{{route('gestaoMusicas.update',$musica->id)}}" method="post" nctype="multipart/form-data">
 	{{ csrf_field() }}
 
 	<input name="_method" type="hidden" value ="PATCH">
@@ -54,7 +54,6 @@
 
 	<div class="form-group">
 	<label>Genero: </label><br>
-	<!--<input type="number" name="genero" value = "1" class="form-control" value ="{{$musica->genero}}"><br>-->
 	<select name = "genero">
 	@foreach($genero as $generos)	
 	<option value ="{{$generos->id}}" > {{$generos->nome}}</option>
@@ -66,12 +65,9 @@
 	<label>Descrição: </label><br>
 	<input type="textarea" name="descricao" class="form-control" value ="{{$musica->descricao}}" ><br>
 	</div>
-	<!--
-	<label>Escolha o ficheiro para upload: </label>
-	<input type="file" name="file" id ="file" value ="{{$musica->file}}">
-	<br>-->
 
 	<strong><p>Impossivel alterar a música carregada</p></strong><br>
+
 	<div class="form-group">
 	<input type="submit" class="btn btn-primary" value="Guardar">
 	</div>

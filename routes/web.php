@@ -65,15 +65,18 @@ Route::get('/perfil/editar/{id}','PerfilController@editar')->middleware('auth');
 
 Route::post('/perfil/{id}','PerfilController@confirmar');
 
+Route::get('/gestao/artista', 'GestaoController@artista')->middleware('auth','admin');;
+Route::post('/gestao/artista','GestaoController@adicionaArtista')->middleware('auth','admin');;
 Route::get('/gestao/adicionar', 'GestaoController@adicionar')->middleware('auth','admin');;
-Route::get('/gestao/remover/{genero}','GestaoController@remover');
+Route::get('/album/remover/{album}','GestaoController@removerAlbum')->middleware('auth','admin');;
+Route::get('/artista/remover/{artista}','GestaoController@removerArtista')->middleware('auth','admin');;
 Route::post('/gestao/guardar', 'GestaoController@guardar')->middleware('auth','admin');;
 
 Route::get('/gestao/album', 'GestaoController@gestaoAlbum')->middleware('auth','admin');;
 Route::post('/gestao/album', 'GestaoController@adicionaAlbum')->middleware('auth','admin');;
 
 
-//rota para mostrar a pagina de um album
+//rota para mostrar a pagina de um album e artistas
 Route::get('/album/{id}','MusicasController@album');
 Route::get('/artista/{id}','MusicasController@artista');
 

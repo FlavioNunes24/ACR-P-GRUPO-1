@@ -8,7 +8,9 @@
 
 #album{
 
-	height: 6%; 
+
+	width: 40px;
+	height: 40px;
 
 }
 
@@ -60,3 +62,8 @@ a.navbar-brand {
 }
 
 ul.nav a{color:black !important;}
+
+
+
+
+

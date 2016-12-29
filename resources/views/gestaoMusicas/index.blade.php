@@ -11,8 +11,8 @@
 	<div class="alert alert-success">{{Session::get('message')}}</div>
 	@endif
 
+	<h2>Músicas</h2>
 	
-		
 				<table class = "table table-striped">
 				<thead>	
 				<tr>
@@ -50,8 +50,9 @@
 </table>
 
 
-<a href="{{route('gestaoMusicas.create')}}" class = "btn btn-success"> Adicionar nova Música</a>
+<a href="{{route('gestaoMusicas.create')}}" class = "btn btn-primary"> Adicionar nova Música</a>
 <br>
 <br>
+
 
 @endsection

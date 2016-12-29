@@ -20,8 +20,9 @@
     @endif
 
 <div class="row">
-	<div class="col-md-6">	
-	<form class="" action="{{route('gestaoMusicas.store')}}" method="post" enctype="multipart/form-data">
+	
+	<div class="col-md-12">	
+		<form class="form-inline" action="{{route('gestaoMusicas.store')}}" method="post" enctype="multipart/form-data">
 	{{csrf_field()}}
 
 	<div class="form-group">
@@ -50,30 +51,48 @@
 	</div>
 
 	<div class="form-group">
+	<label>Descrição: </label><br>
+	<input type="textarea" name="descricao" class="form-control" ><br>
+	</div>
+
+	<div class="form-group">
 	<label>Genero: </label><br>
 	<select name = "genero">
 	@foreach($genero as $generos)	
 	<option value ="{{$generos->id}}" > {{$generos->nome}}</option>
 	@endforeach()
 	</select>
-
 	<a href="/gestao/adicionar" class="btn btn-primary btn-xs">Adicionar Genero</a>
 	</div>
 
+	<br>
 	<div class="form-group">
-	<label>Descrição: </label><br>
-	<input type="textarea" name="descricao" class="form-control" ><br>
+	<label>Album(s):</label> <br>
+	@foreach($album as $albuns)
+	<input type="checkbox" name="album[]" value = "{{$albuns->id}}"> {{$albuns->nome}} <br>
+	@endforeach
+	<a href="/gestao/album" class="btn btn-primary btn-xs">Adicionar Album</a>
 	</div>
-	
+	<br>
+	<div class="form-group">
+	<label>Artista(s):</label><br>
+	@foreach($artista as $artistas)
+	<input type="checkbox" name="artista[]" value="{{$artistas->id}}">{{$artistas->nome}} <br>
+	@endforeach	
+	<a href="/gestao/artista" class="btn btn-primary btn-xs">Adicionar Artista</a>
+	</div>
+
+	<br>
 	<label>Escolha o ficheiro para upload: </label>
 	<input type="file" name="file" id ="file" class="form-control" >
 	<br>
 	<div class="form-group">
-	<input type="submit" class="btn btn-primary" value="Guardar">
-	</div>
+	<input type="submit" class="btn btn-success" value="Guardar">
+	
 	</form>
-
+		</div>
 	</div>
+
 </div>
 <br>
 @endsection

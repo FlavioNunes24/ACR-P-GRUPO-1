@@ -7,6 +7,8 @@ use App\Musica;
 use App\User;
 use App\tipo_utilizadores;
 use App\Genero;
+use App\Album;
+use App\Artista;
 
 class GestaoMusicasController extends Controller
 {
@@ -34,8 +36,10 @@ class GestaoMusicasController extends Controller
     {
         $tipo_utilizadores = tipo_utilizadores::all();
         $genero = Genero::all();
+        $album = Album::all();
+        $artista = Artista::all();
 
-        return view('gestaoMusicas.create',compact('tipo_utilizadores', 'genero'));
+        return view('gestaoMusicas.create',compact('tipo_utilizadores', 'genero','album','artista'));
     }
 
     /**
@@ -46,6 +50,8 @@ class GestaoMusicasController extends Controller
      */
     public function store(Request $request)
     {
+        
+
         //validação dos dados
             $this->validate($request, [
 
@@ -74,13 +80,29 @@ class GestaoMusicasController extends Controller
 
         if($request->hasFile('file'))
         {
-            echo 'Dados guardados</br>';
 
             $file = $request ->file('file');
             $request->file('file')->move(public_path().'/music', $file->getClientOriginalName());
             $musica -> path = $file->getClientOriginalName();     
         }
         $musica->save();
+
+       //fazer correspondencia da musica com os albuns e com os artistas
+        
+       $album = $request->album;
+
+       foreach($album as $idAlbum){
+            $musica->album()->attach($idAlbum);
+       }
+
+
+        $artista = $request->artista;
+
+        foreach ($artista as $idArtistas) {
+           $musica->artistas()->attach($idArtistas); 
+
+        }
+
 
         return redirect ()->route('gestaoMusicas.index')->with('message','Música adicionada com sucesso');
 

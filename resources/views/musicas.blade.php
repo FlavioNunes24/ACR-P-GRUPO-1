@@ -6,7 +6,7 @@
 
 
 @section('content')
-<h2>Músicas</h2>
+<h2 class="hit-the-floor">Músicas</h2>
 <hr>
 
 <!--@if(Session::has('message')) <div class="alert alert-info"> {{Session::get('message')}} </div> @endif -->
@@ -60,12 +60,30 @@
 				
 				<tr>
 				@foreach($musicas->album()->get() as $album)
+
+					@if($musicas->album()->count() == 1)
 				<td>
-               			<a href="album/{{$album->id}}">
-                      		<img src ="/images/album/{{$album->pathImagem}}" id = "album">
-                    	</a>
+
+					<a href="album/{{$album->id}}">
+                   	 <img src ="/images/album/{{$album->pathImagem}}" id = "album">
+               		</a>
+
                 </td>
+                	@endif
 				@endforeach
+
+					@if($musicas->album()->count() > 1)
+					<td>
+						<a href="album/{{$album->id}}">
+                   	 <img src ="/images/album/{{$album->pathImagem}}" id = "album">
+               		</a>
+
+                </td>
+
+					@endif
+
+
+
 				
 				<td>{{$musicas->titulo}}</td>
 				
@@ -94,11 +112,13 @@
 
 				<td>{{App\Genero::find($musicas->genero_id)->nome}}</td>
 
-				@foreach($musicas->album()->get() as $album)
+				
 				<td>
-				<a href="album/{{$album->id}}">	{{$album->nome}} </a>
-				</td>
+				@foreach($musicas->album()->get() as $album)
+				<a href="album/{{$album->id}}">	{{$album->nome}}, </a>
 				@endforeach
+				</td>
+				
 				
 				<td>{{$musicas->data_lancamento}}</td>
 				<td>{{$musicas->preco}}</td>
@@ -112,9 +132,9 @@
 						@endforeach
 					@endforeach
 					@if($i == 0)
-						<td><button type="button" onclick="efectuaCompra({{$musicas->id}})">Comprar</button></td>
+						<td><button class = "btn-compra" type="button" onclick="efectuaCompra({{$musicas->id}})">Comprar</button></td>
 					@else
-						<td><a href="/download/music/{{$musicas->path}}" download> <button>Download</button> 
+						<td><a href="/download/music/{{$musicas->path}}" download> <button class = "btn-download" >Download</button> 
 						</a></td>
 					@endif
 				@endif
