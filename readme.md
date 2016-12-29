@@ -10,7 +10,4 @@
 <h1 align="center">Projecto de ACR - Grupo 1</h1>
 <h2 align="center">Aplicação web para a partilha e compra de conteúdo musical</h2>
 
-<table align="Center">
-<tr>Teste</tr>
-<tr>Teste2</tr>
-</table>
+<h3>Warning!!</h3>
