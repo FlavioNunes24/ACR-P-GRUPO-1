@@ -36,8 +36,6 @@
 	</a>
 	<hr>
 @endforeach -->
-
-
 	<table class="table table-striped">
 		<thead>
 			<tr>
