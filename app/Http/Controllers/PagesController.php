@@ -14,37 +14,7 @@ class PagesController extends Controller
 	{
 
 			
-		//$musica = Musica::with('artistas')->whereId('2')->first();
-		//$artista = Artista::with('musicas')->whereId('1')->get();
-		//echo $musica->titulo;
-
-//testes da aula
-		/*
-		$musica = Musica::find('2');
-		$comp = $musica->compra();
-
-		$results = $comp->get();
-
-		foreach($results as $result){
-			print_r("----");
-			print_r($result->created_at);
-
-		}
-		*/	
-
-		// print_r($comp->get());
-
-
-		/*foreach ($artista as $artistas) 
-		{
-			echo $artistas->nome;
-		}*/
-
-		//echo $artista;
-		//	echo "<hr>";
-		//	echo Musica::find(1)->artistas;
-
-	//return Artista::with('musica')->first();
+		
 
 		return view('welcome');
 	}
