@@ -55,6 +55,16 @@
 		</thead>
 		<tbody>
 		@foreach($musica as $musicas)
+			@if(Auth::check())
+				@php ($i=0)
+					@foreach($compras as $compra)
+						@foreach($compra->musica()->get() as $musica)
+							@if($musica->id == $musicas->id)
+								@php ($i=1)
+							@endif
+						@endforeach
+					@endforeach
+				@endif
 				
 				<tr>
 				@foreach($musicas->album()->get() as $album)
@@ -83,7 +93,13 @@
 
 
 				
-				<td>{{$musicas->titulo}}</td>
+				<td>
+					@if($i == 1)
+					<a href="musica/{{$musicas->id}}">{{$musicas->titulo}}</a>
+					@else
+						{{$musicas->titulo}}
+					@endif
+				</td>
 				
 				<td>
 
@@ -135,15 +151,9 @@
 				
 				<td>{{$musicas->data_lancamento}}</td>
 				<td ><p>{{$musicas->preco}}</p></td>
+				
+					
 				@if(Auth::check())
-				@php ($i=0)
-					@foreach($compras as $compra)
-						@foreach($compra->musica()->get() as $musica)
-							@if($musica->id == $musicas->id)
-								@php ($i=1)
-							@endif
-						@endforeach
-					@endforeach
 					@if($i == 0)
 						<td><button class = "btn-compra" type="button" onclick="efectuaCompra({{$musicas->id}})">Comprar</button></td>
 					@else

@@ -7,11 +7,11 @@
 
 
 @section('slideshow')
-<div style="width:100%">
+
 <img class="mySlides" src="/images/background_music.png">
 <img class="mySlides" src="/images/maxresdefault.jpg">
 <img class="mySlides" src="/images/teste.png">
-</div>
+
 <br>	
 <script>
 	var slideIndex = 0;

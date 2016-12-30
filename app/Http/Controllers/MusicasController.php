@@ -105,13 +105,68 @@ class MusicasController extends Controller
 	{
 		$compras = Compra::all();
 		$album = Album::find($id);
+		if($album != null)
+		{
 		return view('album',compact('album', 'compras'));
+		}
+		else
+		{
+			return redirect('/');
+		}
 	}
 
 	public function artista($id)
 	{
 		$artista = Artista::find($id);
 		$compras = Compra::all();
-		return view('artistas',compact('artista','compras'));	
+		if($artista != null)
+		{
+		return view('artistas',compact('artista','compras'));
+		}
+		else
+		{
+			return redirect('/');
+		}
+	}
+	
+	public function musica($id)
+	{
+		$compras = Compra::all();
+		$musica = Musica::find($id);
+		
+		$user=\Auth::user();
+		
+		if($user)
+		{
+		$compras = $user->compra()->get();
+		}
+		
+		$i = 0;
+		foreach($compras as $compra)
+		{
+			foreach($compra->musica()->get() as $musica)
+			{
+				if($musica->id == $id)
+				{
+					 $i=1;
+				}
+			}
+		}
+	
+		if($i == 1)
+		{
+			if($musica != null)
+			{
+			return view('musica', compact('compras','musica'));
+			}
+			else
+			{
+				return redirect('/');
+			}
+		}
+		else
+		{
+			return redirect('/');
+		}
 	}
 }
