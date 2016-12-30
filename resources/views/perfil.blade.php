@@ -50,6 +50,7 @@
 			<tr>
 				<th>Data de Compra</th>
 				<th>Título</th>
+				<th>Artista</th>
 				<th>Duração</th>
 				<th>Data de Lançamento</th>
 			</tr>
@@ -64,6 +65,25 @@
 						@foreach($compra->musica()->get() as $musica)
 
 						<td>{{$musica->titulo}}</td>
+						<td>
+							<?php $a=$musica->artistas()->get() ?>
+
+							@if($a->count() > 1)
+
+							@foreach($musica->artistas()->get() as $artistas)
+							<a href="artista/{{$artistas->id}}">{{$artistas->nome}}, </a>	
+							@endforeach
+
+							@endif
+
+							@if($a->count() == 1)
+
+							@foreach($musica->artistas()->get() as $artistas)
+							<a href="artista/{{$artistas->id}}">{{$artistas->nome}} </a>
+							@endforeach
+
+							@endif
+						</td>
 						<td>{{$musica->duracao}}</td>
 						<td>{{$musica->data_lancamento}}</td>
 						
