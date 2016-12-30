@@ -144,7 +144,7 @@
 
 					@foreach($gravadoras->album()->get() as $album)
 					<td>
-						{{$album->nome}}
+						<a href="/album/{{$album->id}}">{{$album->nome}} </a>
 					</td>
 					@endforeach
 
@@ -211,7 +211,7 @@
 						<td>{{App\Genero::find($album_musicas->genero_id)->nome}}</td>
 						@foreach($album_musicas->album()->get() as $album)
 						<td>
-							{{$album->nome}}
+							<a href="/album/{{$album->id}}">{{$album->nome}} </a>
 						</td>
 						@endforeach
 						<td>{{$album_musicas->data_lancamento}}</td>
@@ -276,7 +276,7 @@
 						<td>{{App\Genero::find($artistas_musicas->genero_id)->nome}}</td>
 						@foreach($artistas_musicas->album()->get() as $album)
 						<td>
-							{{$album->nome}}
+							<a href="/album/{{$album->id}}">{{$album->nome}} </a>
 						</td>
 						@endforeach
 						<td>{{$artistas_musicas->data_lancamento}}</td>
