@@ -25,6 +25,7 @@
 	<br>
 	<img src="/images/artista/{{$artista->pathImagem}}" class = "foto">
 </div>
+
 <div class="col-sm-3">
 	<h3 class="subtitulo-pagina">Dados: </h3>
 	<hr>

@@ -132,7 +132,7 @@ class MusicasController extends Controller
 	public function musica($id)
 	{
 		$compras = Compra::all();
-		$musica = Musica::find($id);
+		$musica2 = Musica::find($id);
 		
 		$user=\Auth::user();
 		
@@ -157,7 +157,7 @@ class MusicasController extends Controller
 		{
 			if($musica != null)
 			{
-			return view('musica', compact('compras','musica'));
+			return view('musica', compact('compras','musica2'));
 			}
 			else
 			{

@@ -6,8 +6,16 @@
 
 
 @section('content')
-<h2 class="titulo-pagina">{{$musica->titulo}} - @foreach($musica->artistas()->get() as $artista){{$artista->nome}}, @endforeach</h2>
+<h2 class="titulo-pagina">{{$musica2->titulo}} - @foreach($musica2->artistas()->get() as $artista){{$artista->nome}}, @endforeach</h2>
 <hr>
+<button class = "btn-download"onclick="goBack()">«Voltar Atrás</button>
+	<script>
+		function goBack() {
+			window.history.back();
+	}
+	</script>
+	<br>
+	<br>
 
 <div id="myElem" class="alert alert-success" style="display:none">
   <strong>A música foi comprada com sucesso!</strong>
@@ -17,9 +25,12 @@
   <strong>A compra da música falhou!</strong>
 </div>
 
+
+<div style="width=100%;">
 <audio controls preload="">
-  	<source src="/music/{{$caminho = $musica->path}}" type="audio/mpeg">
+  	<source src="/music/{{$caminho = $musica2->path}}" type="audio/mpeg">
 </audio><br>
+</div>
 
 
 
