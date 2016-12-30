@@ -85,8 +85,7 @@
 						<a href="album/{{$album->id}}">
                    	 <img src ="/images/album/{{$album->pathImagem}}" id = "album">
                		</a>
-
-                </td>
+                	</td>
 
 					@endif
 
