@@ -112,7 +112,7 @@
         <div class="container2">
 		<div class="container">
 
-    <h1>Gestão de Conteudo</h1>
+    <h2 class = "titulo-pagina">Gestão de Conteudo</h2>
     <hr>
     
 <nav class="navbar navbar-default">

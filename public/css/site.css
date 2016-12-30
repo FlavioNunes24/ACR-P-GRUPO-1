@@ -1,7 +1,8 @@
 #logo{
-	height: 200%;
-	margin-top: -11px;
-	margin-left: -10%;
+	height: 240%;
+	margin-top: -14px;
+	margin-left: -40px;
+
 
 }
 
@@ -11,6 +12,7 @@
 
 	width: 40px;
 	height: 40px;
+
 
 }
 
@@ -47,11 +49,7 @@ p{
 }
 
 
-a{
-	font-family:inherit;
-	font-weight:500;
-	color:inherit
-}
+
 
 .container2{
 	background: rgba(225, 225, 225, .91);
@@ -87,6 +85,18 @@ ul.nav a{color:black !important;}
     font-weight: bold;
 }
 
+.btn-gray{
+	background-color: #939B9E;
+	color: #fff;
+    border: medium none;
+    padding: 8px 25px;
+    border-radius: 5px;
+    font-family: "Arial";
+     text-align: center;
+    font-weight: bold;
+
+}
+
 .btn-compra:hover {
     background-color: #F26B0C;
     color: white;
@@ -111,7 +121,7 @@ ul.nav a{color:black !important;}
 
 
 
-.hit-the-floor {
+.titulo-pagina{
 
   text-align:left;
   font-size:4em;
@@ -123,12 +133,212 @@ ul.nav a{color:black !important;}
       0px 0px 7px #fff;
 }
 
+.subtitulo-pagina{
+  text-align:left;
+  font-size:2em;
+  color:#797C7D;
+  letter-spacing: -1px;
+  font-weight:500;
+  text-shadow:0px 0px 1px #C5C8C9,
+      0px 0px 7px #fff;
+
+}
+
 td{
 
 	font-family: Verdana;
 
     vertical-align:middle;
 }
+
+
+
+table td {
+	font-family: Arial;
+	font-weight: bold;
+	color: #464647;
+}
+
+table th{
+	color: #2E2E30;
+
+
+}
+table a{
+	font-family:Arial;
+	font-weight:bold;
+	color:#464647;
+	
+}
+
+
+
+a:hover{
+	color:#464647;
+	text-decoration: none;
+}
+/*
+footer{
+
+  
+  background-color: #222;
+  padding: 60px 0px;
+  position: relative;
+
+}
+
+footer ul{
+  padding-right: 50%;
+
+}
+footer li{
+  list-style: none;
+  text-align: center;
+
+
+}
+
+footer ul li a{
+ 
+  font-weight: 600;
+  color: white;
+  font-family: arial;
+  text-decoration: none;
+
+}
+div.menu{
+  float: right;
+  margin-right: 300px;
+  margin-top: 20px;
+}
+
+#footer{
+
+  width: 83%;
+  height: 100%;
+  margin: 0 auto;
+
+}*
+
+#contactos{
+
+  width: 30%
+}
+
+
+
+div.contactos{
+
+  float: left;
+  margin-top: -25px;
+  color: white;
+}
+
+
+}
+.contactos h3{
+  color: #b7bec9;
+  padding-bottom: 20px;
+  font-weight: 600;
+  font-family: Arial;
+
+}
+
+.menu h3{
+  color: #b7bec9;
+  padding-bottom: 20px;
+  font-weight: 600;
+  font-family: Arial;  
+}
+
+.contactos p{
+
+  color: #dedfe0;
+}
+*/
+
+
+footer{
+
+  width: 100%;
+  height:100%;
+  background-color: #222;
+  margin-top:50px;
+  position: absolute;
+
+
+}
+
+#footer{
+  width: 84%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+h3{
+  color: #ffffff;
+}
+
+.contactos h3{
+  color: #b7bec9;
+  padding-bottom: 20px;
+  font-weight: 700;
+  font-family: Arial;
+
+}
+
+div.contactos{
+  float: left;
+  margin-top: 30px;
+  color: white;
+}
+
+.redes-sociais h3{
+    color: #b7bec9;
+  padding-bottom: 20px;
+  font-weight: 700;
+  font-family: Arial;
+}
+
+div.redes-sociais{
+  float: right;
+  margin-right:50px;
+  margin-top: 30px;
+}
+
+div.menu{
+  float: right;
+  margin-right:270px;
+  margin-top: 30px;
+}
+
+.menu h3{
+  color: #b7bec9;
+  padding-bottom: px;
+  font-weight: 700;
+  font-family: Arial;
+}
+
+footer li{
+  list-style: none;
+  padding-top: 3px;
+  font-size: 130%;
+}
+
+footer ul li a{
+ 
+  font-weight: 600;
+  color: #F26B0C;
+  font-family: arial;
+  text-decoration: none;
+}
+
+img{
+  width: 39px;
+  height: 39px;
+}
+
+
 
 
 

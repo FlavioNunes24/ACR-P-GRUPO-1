@@ -121,9 +121,57 @@
         	@yield('content')
 		</div>
 		</div>
-    </div>
+    
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+
+
+<footer>
+    <div id = "footer">
+        <div class="contactos">
+            
+        <h3>Contactos</h3>
+            <p>Email: <a href="mailto:musicsotoreuma@gmail.com">musicsotoreuma@gmail.com</a></p>
+            <p>Telefone: 960000000</p>
+            <p>Morada: Caminho da Penteada 9020-105 Funchal</p>
+
+        </div>
+
+        <div class="redes-sociais">
+                <h3>Somos sociais</h3>
+                <a href="http://www.google.pt"> <img src="/images/footer/facebook_round.png"></a>
+                <a href="http://www.google.pt"> <img src="/images/footer/instagram_round.png"></a>
+                <a href="http://www.google.pt"> <img src="/images/footer/twitter_round.png"></a>
+                <a href="http://www.google.pt"> <img src="/images/footer/youtube_round.png"></a>
+
+
+
+        </div>
+
+        <div class= "menu">
+
+       <h3>Music Planet</h3>
+            
+                <ul>
+                    <li><a href="/"> Home </a></li>
+                    <li><a href="/musicas"> Músicas </a></li>
+                    <li><a href="/top"> Top </a></li>
+                    <li><a href="/suporte"> Suporte </a></li>
+
+                </ul>
+
+        </div>
+
+    </div>
+
+
+
+</footer>
+
+
 </body>
+
+</div>
+
 </html>

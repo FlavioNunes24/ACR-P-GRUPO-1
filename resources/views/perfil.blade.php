@@ -32,7 +32,7 @@
 	<p><strong>Saldo: </strong>{{$user->saldo}}</p>
 
 <br>
-<a href="/perfil/editar/{{$user->id}}" class = "btn btn-primary"> Editar dados</a>
+<a href="/perfil/editar/{{$user->id}}" class = "btn-gray"> Editar dados</a>
 <br>
 <br>
 

@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<h1>{{$artista->nome}}</h1>
+<h2 class="titulo-pagina">{{$artista->nome}}</h2>
 <div id="myElem" class="alert alert-success" style="display:none">
   <strong>A música foi comprada com sucesso!</strong>
 </div>
@@ -16,7 +16,7 @@
 <hr>
 
 <div class="col-sm-3">
-<button onclick="goBack()">«Voltar Atrás</button>
+<button class = "btn-download"onclick="goBack()">«Voltar Atrás</button>
 			<script>
 					function goBack() {
 						window.history.back();
@@ -26,7 +26,7 @@
 	<img src="/images/artista/{{$artista->pathImagem}}" class = "foto">
 </div>
 <div class="col-sm-3">
-	<h2>Dados: </h2>
+	<h3 class="subtitulo-pagina">Dados: </h3>
 	<hr>
 
 	
@@ -40,7 +40,7 @@
 </div>
 	
 <div class="col-sm-6">
-	<h2>Musicas</h2>
+	<h3 class="subtitulo-pagina">Músicas:</h3>
 	<hr>
 
 	<table class="table table-striped">

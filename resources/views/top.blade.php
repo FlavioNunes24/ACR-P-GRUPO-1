@@ -7,7 +7,7 @@
 
 @section('content')
 
-<h1>Top</h1>
+<h2 class="titulo-pagina" >Top</h2>
 <hr>
 <div id="myElem" class="alert alert-success" style="display:none">
   <strong>A música foi comprada com sucesso!</strong>
@@ -16,7 +16,6 @@
 <div id="myElem2" class="alert alert-danger" style="display:none">
   <strong>A compra da música falhou!</strong>
 </div>
-<h2>Top músicas</h2>
 <table class="table table-striped">
 		<thead>
 			<tr>

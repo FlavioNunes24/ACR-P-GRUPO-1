@@ -50,7 +50,7 @@
 </table>
 
 
-<a href="{{route('gestaoMusicas.create')}}" class = "btn btn-primary"> Adicionar nova Música</a>
+<a href="{{route('gestaoMusicas.create')}}" class = "btn-gray"> Adicionar nova Música</a>
 <br>
 <br>
 

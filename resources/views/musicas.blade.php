@@ -6,7 +6,7 @@
 
 
 @section('content')
-<h2 class="hit-the-floor">Músicas</h2>
+<h2 class="titulo-pagina">Músicas</h2>
 <hr>
 
 <!--@if(Session::has('message')) <div class="alert alert-info"> {{Session::get('message')}} </div> @endif -->
@@ -40,7 +40,7 @@
 		<thead>
 			<tr>
 			
-				<th>#</th>
+				<th></th>
 				<th>Título</th>
 				<th>Artistas</th>
 				<th>Gravadora</th>
@@ -112,14 +112,29 @@
 
 				
 				<td>
+				<?php $b=$musicas->album()->get() ?>
+
+				@if($b->count() > 1)
+				
+			
 				@foreach($musicas->album()->get() as $album)
 				<a href="album/{{$album->id}}">	{{$album->nome}}, </a>
 				@endforeach
+				
+				@endif
+
+				@if($b->count() == 1)
+
+				@foreach($musicas->album()->get() as $album)
+				<a href="album/{{$album->id}}">	{{$album->nome}} </a>
+				@endforeach
+
+				@endif
 				</td>
 				
 				
 				<td>{{$musicas->data_lancamento}}</td>
-				<td>{{$musicas->preco}}</td>
+				<td ><p>{{$musicas->preco}}</p></td>
 				@if(Auth::check())
 				@php ($i=0)
 					@foreach($compras as $compra)

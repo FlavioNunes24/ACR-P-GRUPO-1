@@ -7,7 +7,7 @@
 
 @section('content')
 
-<h1>Suporte</h1>
+<h2 class="titulo-pagina">Suporte</h2>
 <hr>
 
 <div class="container">
@@ -125,7 +125,7 @@
 	</div> 
 
 	<input type="hidden" name="_token" value="{{csrf_token()}}">
-	<button type="submit" class="btn btn-success">Enviar Mensagem</button>
+	<button type="submit" class="btn-gray">Enviar Mensagem</button>
 	</form>
 	<br>
 		</div>
