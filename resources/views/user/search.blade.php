@@ -54,7 +54,7 @@
 				@if($a->count() > 1)
 				
 				@foreach($musicas->artistas()->get() as $artistas)
-				{{$artistas->nome}},
+				<a href="artista/{{$artistas->id}}">{{$artistas->nome}}, </a>
 				@endforeach
 				
 				@endif
@@ -62,7 +62,7 @@
 				@if($a->count() == 1)
 
 				@foreach($musicas->artistas()->get() as $artistas)
-				{{$artistas->nome}}
+				<a href="artista/{{$artistas->id}}">{{$artistas->nome}}
 				@endforeach
 
 				@endif
@@ -135,7 +135,7 @@
 
 					<td>				
 					@foreach($gravadoras->artistas()->get() as $artistas)
-					{{$artistas->nome}},
+					<a href="artista/{{$artistas->id}}">{{$artistas->nome}}, </a>
 					@endforeach
 					</td>
 
@@ -204,7 +204,7 @@
 						<td>{{$album_musicas->titulo}}</td>
 						<td>				
 						@foreach($album_musicas->artistas()->get() as $artistas)
-							{{$artistas->nome}},
+							<a href="artista/{{$artistas->id}}">{{$artistas->nome}}, </a>
 						@endforeach
 						</td>
 						<td>{{$album_musicas->gravadora}}</td>
@@ -269,7 +269,7 @@
 						<td>{{$artistas_musicas->titulo}}</td>
 						<td>				
 						@foreach($artistas_musicas->artistas()->get() as $artistas)
-							{{$artistas->nome}},
+							<a href="artista/{{$artistas->id}}">{{$artistas->nome}}, </a>
 						@endforeach
 						</td>
 						<td>{{$artistas_musicas->gravadora}}</td>
