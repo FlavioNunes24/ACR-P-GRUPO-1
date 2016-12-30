@@ -263,7 +263,10 @@ img{
   height: 39px;
 }
 
-
+audio {
+	width: 100%;
+	background-color: blue;
+}
 
 
 
