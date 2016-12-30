@@ -48,6 +48,7 @@
 		<thead>
 			<tr>
 				<th>Título</th>
+				<th>Artista</th>
 				<th>Duração</th>
 				<th>Data de Lançamento</th>
 				<th>Preço</th>
@@ -59,6 +60,11 @@
 			@foreach($album->musicas()->get() as $musicas)
 
 						<td>{{$musicas->titulo}}</td>
+						<td>
+							@foreach($musicas->artistas()->get() as $artistas)
+								<a href="/artista/{{$artistas->id}}">{{$artistas->nome}} </a>
+							@endforeach
+						</td>
 						<td>{{$musicas->duracao}}</td>
 						<td>{{$musicas->data_lancamento}}</td>	
 						<td>{{$musicas->preco}}</td>
