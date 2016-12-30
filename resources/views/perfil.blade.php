@@ -32,7 +32,8 @@
 	<p><strong>Saldo: </strong>{{$user->saldo}}</p>
 
 <br>
-<a href="/perfil/editar/{{$user->id}}" class = "btn-gray"> Editar dados</a>
+<a href="/perfil/editar/{{$user->id}}" class = "btn-gray">Editar dados</a>
+<a href="/perfil/saldo/{{$user->id}}" class = "btn-compra">Adicionar saldo</a>
 <br>
 <br>
 
@@ -100,6 +101,6 @@
 	</table>
 </div>
 
-
+</div>
 
 @endsection

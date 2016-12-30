@@ -120,7 +120,7 @@
 		<div class="container">
         	@yield('content')
 		</div>
-		</div>
+		
     
 
     <!-- Scripts -->
@@ -132,14 +132,14 @@
         <div class="contactos">
             
         <h3>Contactos</h3>
-            <p>Email: <a href="mailto:musicsotoreuma@gmail.com">musicsotoreuma@gmail.com</a></p>
-            <p>Telefone: 960000000</p>
-            <p>Morada: Caminho da Penteada 9020-105 Funchal</p>
+            <p> <strong> Email:</strong> <a href="mailto:musicsotoreuma@gmail.com">musicstoreuma@gmail.com</a></p>
+            <p><strong>Telefone:</strong> 960000000</p>
+            <p><strong>Morada:</strong> Caminho da Penteada 9020-105 Funchal</p>
 
         </div>
 
         <div class="redes-sociais">
-                <h3>Somos sociais</h3>
+                <h3>Redes sociais</h3>
                 <a href="http://www.google.pt"> <img src="/images/footer/facebook_round.png"></a>
                 <a href="http://www.google.pt"> <img src="/images/footer/instagram_round.png"></a>
                 <a href="http://www.google.pt"> <img src="/images/footer/twitter_round.png"></a>
@@ -172,6 +172,7 @@
 
 </body>
 
+</div>
 </div>
 
 </html>

@@ -79,9 +79,9 @@
 						@endforeach
 					@endforeach
 					@if($i == 0)
-						<td><button type="button" onclick="efectuaCompra({{$musicas->id}})"> Comprar</button></td>
+						<td><button class="btn-compra" type="button" onclick="efectuaCompra({{$musicas->id}})"> Comprar</button></td>
 					@else
-						<td><a href="/download/music/{{$musicas->path}}" download>  <button>Download</button> 
+						<td><a href="/download/music/{{$musicas->path}}" download>  <button class="btn-download">Download</button> 
 						</a></td>
 					@endif
 				@endif
