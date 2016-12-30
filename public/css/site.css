@@ -31,6 +31,7 @@ body {
 	background-image:url("/images/background_home.png");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+
 }
 
 p{
@@ -177,19 +178,25 @@ a:hover{
 	color:#464647;
 	text-decoration: none;
 }
+
 footer{
 
   width: 100%;
   height:250px;
   background-color: #222;
-  margin-top:50px;
-  position: absolute;
+  position: relative;
+
+   z-index: 10;
+  bottom: 0;
+  left:0;
 }
 
 #footer{
   width: 84%;
   height: 100%;
+  margin-top:80px;
   margin: 0 auto;
+
 }
 
 
@@ -224,7 +231,7 @@ div.redes-sociais{
 
 div.menu{
   float: right;
-  margin-right:290px;
+  margin-right:310px;
   margin-top: 30px;
 
 }
