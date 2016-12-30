@@ -55,8 +55,8 @@
 		</thead>
 		<tbody>
 		@foreach($musica as $musicas)
+		@php ($i=0)
 			@if(Auth::check())
-				@php ($i=0)
 					@foreach($compras as $compra)
 						@foreach($compra->musica()->get() as $musica)
 							@if($musica->id == $musicas->id)
