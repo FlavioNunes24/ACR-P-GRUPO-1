@@ -19,8 +19,8 @@
 <table class="table table-striped">
 		<thead>
 			<tr>
-				<th>#</th>
 				<th></th>
+				<th>#</th>
 				<th>Título</th>
 				<th>Artistas</th>
 				<th>Gravadora</th>
@@ -37,7 +37,7 @@
 		<?php $n=0; ?>
 		@foreach($abc->sortByDesc('compra_count') as $abcd)
 		<tr>
-			<td class >{{++$n}}</td>
+			<td><p class = "top">{{++$n}}</p></td>
 			@foreach($abcd->album()->get() as $album)
 
 				@if($abcd->album()->count() == 1)

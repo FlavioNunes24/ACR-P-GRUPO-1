@@ -8,11 +8,9 @@
 
 
 #album{
-
-
+  margin-top: -2px;
 	width: 40px;
 	height: 40px;
-
 
 }
 
@@ -31,7 +29,7 @@ body {
 	background-image:url("/images/background_home.png");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-
+  height: 100%;
 }
 
 p{
@@ -66,7 +64,16 @@ a.navbar-brand {
 	color:black;
 }
 
-ul.nav a{color:black !important;}
+ul.nav a{
+  color:#777 !important;
+  font-size: 18px;
+
+}
+
+saldo-user{
+  color: black;
+  font-size: 18px;
+}
 
 
 .mySlides {
@@ -185,17 +192,20 @@ footer{
   height:250px;
   background-color: #222;
   position: relative;
+  margin-top:50px;
+    bottom: 0;
+    left:0;
 
-   z-index: 10;
-  bottom: 0;
-  left:0;
+  
+
 }
 
 #footer{
   width: 84%;
-  height: 100%;
+  height:100%;
   margin-top:80px;
-  margin: 0 auto;
+  margin: 0 auto -250px;
+
 
 }
 
@@ -212,7 +222,7 @@ footer{
 div.contactos{
   float: left;
   margin-top: 30px;
-  color: white;
+  color: #646F73;
   font-family: Arial;
 }
 
@@ -262,6 +272,13 @@ img{
   width: 39px;
   height: 39px;
 }
+
+.top{
+    color: #ff6900;
+    text-align: center;
+    font-weight: 800;
+    font-family: Arial;
+  }
 
 
 

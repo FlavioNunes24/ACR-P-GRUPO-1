@@ -88,7 +88,7 @@
                                 <ul class="dropdown-menu" role="menu">
                                 	<li>
                                 		<a>
-											Saldo: {{Auth::user()->saldo}}
+											Saldo: <strong>{{Auth::user()->saldo}}</strong>
 										</a>
 									</li>
 								   <li>
@@ -121,7 +121,9 @@
         	@yield('content')
 		</div>
 		
-    
+    </div>
+</div>
+
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
@@ -172,7 +174,6 @@
 
 </body>
 
-</div>
-</div>
+
 
 </html>

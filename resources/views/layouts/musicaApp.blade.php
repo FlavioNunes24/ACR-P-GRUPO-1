@@ -86,6 +86,11 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+                                <li>
+                                        <a>
+                                            Saldo: <strong>{{Auth::user()->saldo}}</strong>
+                                        </a>
+                                    </li>
 								   <li>
 										<a href="{{ url('/perfil') }}">
 											Perfil
