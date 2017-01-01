@@ -273,6 +273,7 @@ img{
   height: 39px;
 }
 
+<<<<<<< HEAD
 .top{
     color: #ff6900;
     text-align: center;
@@ -281,6 +282,12 @@ img{
   }
 
 
+=======
+audio {
+	width: 100%;
+	background-color: blue;
+}
+>>>>>>> origin/master
 
 
 
