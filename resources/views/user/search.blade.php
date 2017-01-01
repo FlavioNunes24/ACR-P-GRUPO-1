@@ -49,15 +49,24 @@
 			@endif
 
 			
-				<tr>
+				<tr class="abcda">
 				@foreach($musicas->album()->get() as $album)
+				@if($musicas->album()->count() == 1)
 				<td>	<a href="/album/{{$album->id}}">
                       		<img src ="/images/{{$album->pathImagem}}" id = "album">
                     	</a>
-
-
                 </td>
+                @endif
 				@endforeach
+				
+				@if($musicas->album()->count() > 1)
+					<td>
+						<a href="album/{{$album->id}}">
+                   	 <img src ="/images/album/{{$album->pathImagem}}" id = "album">
+               		</a>
+                	</td>
+
+				@endif
 				
 				<td >
 					@if($i == 1)
@@ -118,7 +127,7 @@
 	<h2>Gravadora</h2>
 		<table class="table table-striped">
 			<thead>
-				<tr>
+				<tr >
 
 					<th></th>
 					<th>Título</th>
@@ -149,13 +158,27 @@
 				@endif
 				
 				
-					<tr>
+					<tr class="abcda">
 					@foreach($gravadoras->album()->get() as $album)
-					<td>	<a href="#">
+					@if($gravadoras->album()->count() == 1)
+					<td>	<a href="album/{{$album->id}}">
 								<img src ="/images/{{$album->pathImagem}}" id = "album">
 							</a>
 					</td>
+					@endif
 					@endforeach
+					
+					@if($gravadoras->album()->count() > 1)
+					<td>
+						<a href="album/{{$album->id}}">
+                   	 <img src ="/images/album/{{$album->pathImagem}}" id = "album">
+               		</a>
+                	</td>
+
+					@endif
+
+					
+					
 
 					<td >
 					@if($i == 1)
@@ -232,13 +255,24 @@
 				@endif
 				
 				
-					<tr>
+					<tr class="abcda">
 						@foreach($album_musicas->album()->get() as $albums_musicas)
-							<td>	<a href="#">
+						@if($album_musicas->album()->count() == 1)
+							<td>	<a href="album/{{$albums_musicas->id}}">
 								<img src ="/images/{{$albums_musicas->pathImagem}}" id = "album">
 							</a>
 							</td>
+							@endif
 						@endforeach
+						
+						@if($album_musicas->album()->count() > 1)
+							<td>	<a href="album/{{$albums_musicas->id}}">
+								<img src ="/images/{{$albums_musicas->pathImagem}}" id = "album">
+							</a>
+							</td>
+							@endif
+						
+						
 						<td >
 							@if($i == 1)
 							<a href="musica/{{$album_musicas->id}}">{{$album_musicas->titulo}}</a>
@@ -309,13 +343,23 @@
 				
 				
 				
-					<tr>
+					<tr class="abcda">
 						@foreach($artistas_musicas->album()->get() as $artista_musicas)
-							<td>	<a href="#">
+							@if($artistas_musicas->album()->count() == 1)
+							<td>	<a href="album/{{$artista_musicas->id}}">
 								<img src ="/images/{{$artista_musicas->pathImagem}}" id = "album">
 							</a>
 							</td>
+							@endif
 						@endforeach
+						
+						@if($artistas_musicas->album()->count() > 1)
+							<td>	<a href="album/{{$artista_musicas->id}}">
+								<img src ="/images/{{$artista_musicas->pathImagem}}" id = "album">
+							</a>
+							</td>
+						@endif
+						
 						
 						<td >
 							@if($i == 1)
