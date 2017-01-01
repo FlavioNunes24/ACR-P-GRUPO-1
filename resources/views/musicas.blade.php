@@ -147,7 +147,7 @@
 				@endif
 			</tr>
 	
-		@endforeach()
+		@endforeach
 		</tbody>
 	</table>
 	
