@@ -10,7 +10,7 @@
 	<div class="alert alert-success">{{Session::get('message')}}</div>
 @endif
 
-<h2>Artistas</h2>
+<h3 class="subtitulo-pagina">Artistas</h3>
 <table class="table table-striped">
 		<thead>
 			<tr>
@@ -35,7 +35,7 @@
 		</table>
 
 
-<h2>Adicionar novo artista:</h2>
+<h3 class="subtitulo-pagina">Adicionar novo artista:</h3>
 <hr>
 <div class="row">
 	<div class="col-md-6">

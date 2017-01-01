@@ -6,7 +6,7 @@
 
 @section('content')
 
-<h1>Generos</h1>
+<h3 class="subtitulo-pagina">Generos</h3>
 
 
 		

@@ -26,6 +26,7 @@
     </script>
 </head>
 <body>
+<div class="wrapper">
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
@@ -143,5 +144,51 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+
+
+</div>
+
+
+    <footer>
+    <div id = "footer">
+        <div class="contactos">
+            
+        <h3>Contactos</h3>
+            <p> <strong> Email:</strong> <a href="mailto:musicsotoreuma@gmail.com">musicstoreuma@gmail.com</a></p>
+            <p><strong>Telefone:</strong> 960000000</p>
+            <p><strong>Morada:</strong> Caminho da Penteada 9020-105 Funchal</p>
+
+        </div>
+
+        <div class="redes-sociais">
+                <h3>Redes sociais</h3>
+                <a href="http://www.facebook.com" target="_blank"> <img src="/images/footer/facebook_round.png"></a>
+                <a href="http://www.instagram.com" target="_blank"> <img src="/images/footer/instagram_round.png"></a>
+                <a href="http://www.twitter.com" target="_blank"> <img src="/images/footer/twitter_round.png"></a>
+                <a href="http://www.youtube.com" target="_blank"> <img src="/images/footer/youtube_round.png"></a>
+
+
+
+        </div>
+
+        <div class= "menu">
+
+       <h3>Music Planet</h3>
+            
+                <ul>
+                    <li><a href="/"> Home </a></li>
+                    <li><a href="/musicas"> Músicas </a></li>
+                    <li><a href="/top"> Top </a></li>
+                    <li><a href="/suporte"> Suporte </a></li>
+
+                </ul>
+
+        </div>
+
+    </div>
+
+
+
+</footer>
 </body>
 </html>

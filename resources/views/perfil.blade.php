@@ -33,7 +33,9 @@
 
 <br>
 <a href="/perfil/editar/{{$user->id}}" class = "btn-gray">Editar dados</a>
+@if($user->tipo_utilizador == "1")
 <a href="/perfil/saldo/{{$user->id}}" class = "btn-compra">Adicionar saldo</a>
+@endif
 <br>
 <br>
 

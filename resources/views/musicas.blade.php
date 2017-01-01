@@ -26,7 +26,7 @@
 			<tr>
 			
 				<th></th>
-				<th>Título</th>
+				<th >Título</th>
 				<th>Artistas</th>
 				<th>Gravadora</th>
 				<th>Gênero</th>
@@ -51,11 +51,11 @@
 					@endforeach
 				@endif
 				
-				<tr>
+				<tr class="abcda">
 				@foreach($musicas->album()->get() as $album)
 
 					@if($musicas->album()->count() == 1)
-				<td>
+				<td >
 
 					<a href="album/{{$album->id}}">
                    	 <img src ="/images/album/{{$album->pathImagem}}" id = "album">
@@ -77,7 +77,7 @@
 
 
 				
-				<td>
+				<td >
 					@if($i == 1)
 					<a href="musica/{{$musicas->id}}">{{$musicas->titulo}}</a>
 					@else
@@ -106,7 +106,7 @@
 				@endif
 				</td>
 			
-				<td>{{$musicas->gravadora}}</td>
+				<td > {{$musicas->gravadora}}</td>
 
 				<td>{{App\Genero::find($musicas->genero_id)->nome}}</td>
 

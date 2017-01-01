@@ -26,6 +26,7 @@
     </script>
 </head>
 <body>
+<div class="wrapper">
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
@@ -88,7 +89,7 @@
                                 <ul class="dropdown-menu" role="menu">
                                 	<li>
                                 		<a>
-											Saldo: <strong>{{Auth::user()->saldo}}€</strong>
+											Saldo: <label class = "saldo" ><strong>{{Auth::user()->saldo}}€</strong></label>
 										</a>
 									</li>
 								   <li>
@@ -97,7 +98,7 @@
 										</a>
 									</li>
 									<li>
-                                        <a href="{{ url('/logout') }}"
+                                        <a  href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                             Logout
@@ -128,6 +129,7 @@
     <!-- Scripts -->
     <script src="/js/app.js"></script>
 
+</div>
 
 <footer>
     <div id = "footer">
@@ -142,10 +144,10 @@
 
         <div class="redes-sociais">
                 <h3>Redes sociais</h3>
-                <a href="http://www.google.pt"> <img src="/images/footer/facebook_round.png"></a>
-                <a href="http://www.google.pt"> <img src="/images/footer/instagram_round.png"></a>
-                <a href="http://www.google.pt"> <img src="/images/footer/twitter_round.png"></a>
-                <a href="http://www.google.pt"> <img src="/images/footer/youtube_round.png"></a>
+                <a href="http://www.facebook.com" target="_blank"> <img src="/images/footer/facebook_round.png"></a>
+                <a href="http://www.instagram.com" target="_blank"> <img src="/images/footer/instagram_round.png"></a>
+                <a href="http://www.twitter.com" target="_blank"> <img src="/images/footer/twitter_round.png"></a>
+                <a href="http://www.youtube.com" target="_blank"> <img src="/images/footer/youtube_round.png"></a>
 
 
 
@@ -170,6 +172,7 @@
 
 
 </footer>
+
 
 
 </body>
