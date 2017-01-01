@@ -30,7 +30,7 @@
 				@endif
 			@endforeach
 				@if($top->album->count() > 1)
-					<img src ="/images/album/{{$album->pathImagem}}" style="width:100% height: 600px;">
+					<img src ="/images/album/{{$album->pathImagem}}" style="width:100%; height: 600px;">
 				@endif
 			<div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
 				{{$top->titulo}} - 
