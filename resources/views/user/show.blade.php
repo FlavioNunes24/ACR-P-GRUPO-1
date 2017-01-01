@@ -27,6 +27,9 @@
 				<th>Email</th>
 				<th>Saldo</th>
 				<th>Ação</th>
+		@if($user->tipo_utilizador == "1")
+				<th>Admin</th>
+		@endif
 			</tr>
 		</thead>
 		<tbody>
@@ -39,6 +42,11 @@
 					<td>{{$user->email}}</td>
 					<td>{{$user->saldo}}</td>
 					<td><a class="btn btn-success" href="/perfil/editar/{{$user->id}}">Editar</a></td>
+
+					@if($user->tipo_utilizador == "1")
+					<td><a class="btn btn-success" href="/admin/{{$user->id}}">Tornar Admin</a></td>
+					@endif	
+
 			</tr>
 		</tbody>
 	</table>

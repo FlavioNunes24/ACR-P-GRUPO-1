@@ -7,7 +7,7 @@
 
 @section('content')
 
-<h1>Perfil - {{$user -> name }}</h1>
+<h2 class="titulo-pagina">Perfil - {{$user -> name }}</h2>
 <hr>
 
 	@if(Session::has('message'))
@@ -21,7 +21,7 @@
 
 
 <div class="col-sm-5"">
-	<h1>Dados Pessoais</h1>
+	<h3 class="subtitulo-pagina">Dados Pessoais</h3>
 	<hr>
 
 	<p><strong>Nome: </strong>{{$user->name}}</p>
@@ -43,7 +43,7 @@
 <!--musicas-->
 
 <div class="col-sm-7">
-	<h1>Musicas</h1>
+	<h3 class="subtitulo-pagina">Músicas</h3>
 	<hr>
 
 	<table class="table table-striped">
@@ -65,7 +65,7 @@
 
 						@foreach($compra->musica()->get() as $musica)
 
-						<td>{{$musica->titulo}}</td>
+						<td><a href="musica/{{$musica->id}}">{{$musica->titulo}}</a></td>
 						<td>
 							<?php $a=$musica->artistas()->get() ?>
 

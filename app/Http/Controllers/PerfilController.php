@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Compra;
+use Crypt;
 
 class PerfilController extends Controller
 {
@@ -71,4 +72,40 @@ class PerfilController extends Controller
             return redirect ('/perfil')->with('message','Dados pessoais alterados com sucesso');;
 
 	}
+
+    public function saldo($id){
+
+        $user = \App\User::find($id);
+
+        return view('saldo', compact('user'));
+
+    }
+
+    public function adicionarSaldo(Request $request)
+    {
+
+
+         $this->validate($request, [
+
+            
+            'saldo' => 'required|numeric',
+            ]);
+
+
+
+    $user = \App\User::findOrFail($request->id);
+
+    
+    if($user->email == $request->email)
+    {
+        $a = $user->saldo;
+        $user->saldo = $a + $request->saldo;
+        $user->save();
+        return redirect ('/perfil')->with('message','Saldo adicionado com sucesso');
+    }   
+    if($user->email != $request->email)
+    {
+        return redirect ('/perfil');
+    }
+    }
 }

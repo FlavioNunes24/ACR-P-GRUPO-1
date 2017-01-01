@@ -20,22 +20,7 @@
 </div>
 
 
-<!--<hr>
 
-@foreach($musica as $musicasDB)
-
-	<h1>{{$musicasDB -> path}}</h1>
-	<p>{{$musicasDB -> descricao}}</p>
-
-
-	<hr>
-	<audio controls preload="">
-  	<source src="{{$name = $musicasDB->path}}" type="audio/mpeg">
-	</audio><br>
-	<a href="/download/{{$name = $musicasDB->path}}" download> Download
-	</a>
-	<hr>
-@endforeach -->
 	<table class="table table-striped">
 		<thead>
 			<tr>

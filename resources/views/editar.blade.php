@@ -7,7 +7,7 @@
 
 @section('content')
 
-<h1>Editar dados pessoais - {{$user -> name }}</h1>
+<h3 class="subtitulo-pagina">Editar dados pessoais - {{$user -> name }}</h3>
 <hr>
 
 <div class="row">

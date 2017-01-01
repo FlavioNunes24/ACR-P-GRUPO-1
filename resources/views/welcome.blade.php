@@ -33,7 +33,7 @@ function carousel() {
 
 
 @section('content')
-<h1>Bem vindo a Music Planet</h1>
+<h1>Bem-vindo a Music Planet</h1>
 
 
 

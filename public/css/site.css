@@ -1,5 +1,6 @@
 #logo{
 	height: 240%;
+  width: 80px;
 	margin-top: -14px;
 	margin-left: -40px;
 
@@ -108,6 +109,7 @@ saldo-user{
 .btn-compra:hover {
     background-color: #F26B0C;
     color: white;
+
 }
 
 .btn-download{
@@ -124,6 +126,8 @@ saldo-user{
 .btn-download:hover {
     background-color: #262524;
     color: white;
+
+
 }
 
 
@@ -168,9 +172,13 @@ table td {
 }
 
 table th{
-	color: #2E2E30;
+	color: #1F2224;
 
 
+}
+
+p{
+  color: #1F2224;
 }
 table a{
 	font-family:Arial;
@@ -217,6 +225,10 @@ footer{
   font-weight: 700;
   font-family: Arial;
 
+}
+
+.contactos p{
+  color: #646F73;
 }
 
 div.contactos{
@@ -273,21 +285,21 @@ img{
   height: 39px;
 }
 
-<<<<<<< HEAD
+
 .top{
     color: #ff6900;
     text-align: center;
     font-weight: 800;
-    font-family: Arial;
+    font-family: sans-serif;
   }
 
 
-=======
+
 audio {
 	width: 100%;
 	background-color: blue;
 }
->>>>>>> origin/master
+
 
 
 

@@ -28,11 +28,7 @@
 
 	
 
-	<?php $id = $tipo->id?>
-	@if($id==2)
-		<a href="#" class = "btn btn-success"> Adicionar novo Administrador</a>
-		<br>
-	@endif
+
 	<br>
 </div>
 

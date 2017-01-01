@@ -85,11 +85,32 @@
 			<td>{{$abcd->gravadora}}</td>
 			<td>{{App\Genero::find($abcd->genero_id)->nome}}</td>
 			
+
+
 				<td>
+				<?php $b=$abcd->album()->get() ?>
+
+				@if($b->count() > 1)
+				
+			
 				@foreach($abcd->album()->get() as $album)
 				<a href="album/{{$album->id}}">	{{$album->nome}}, </a>
 				@endforeach
+				
+				@endif
+
+				@if($b->count() == 1)
+
+				@foreach($abcd->album()->get() as $album)
+				<a href="album/{{$album->id}}">	{{$album->nome}} </a>
+				@endforeach
+
+				@endif
 				</td>
+
+
+
+
 
 			<td>{{$abcd->data_lancamento}}</td>
 			<td>{{$abcd->preco}}</td>

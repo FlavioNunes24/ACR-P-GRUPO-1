@@ -201,4 +201,17 @@ class GestaoController extends Controller
 
 	}
 
+	public function edit_tipo(Request $request, $id){
+		
+		 $user = \App\User::findOrFail($id);
+
+		$user->tipo_utilizador = "2";
+
+		$user->save();
+
+
+		return redirect('/gestao');
+	
+	}
+
 }
