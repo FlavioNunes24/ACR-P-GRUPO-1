@@ -105,7 +105,7 @@ class PerfilController extends Controller
     }   
     if($user->email != $request->email)
     {
-        return redirect ('/perfil');
+        return redirect ('/perfil')->with('error','O email não é válido');
     }
     }
 }
