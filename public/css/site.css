@@ -215,7 +215,7 @@ html, body{
 
 .wrapper{
   min-height: 100%;
-  margin-bottom: -250px;
+  margin-bottom: -200px;
 }
 
 
@@ -316,9 +316,21 @@ audio {
 }
 
 
+.musica-artista{
+  color:#009FD4;
+  font-size: 16px;
+  font-weight: 900px;
+}
+.musica-artista:hover{
+  color:#009FD4;
+
+}
+
+
+
 .saldo{
   font-weight: bold;
-  color:#F26B0C;
+  color:#009FD4;
 }
 
 

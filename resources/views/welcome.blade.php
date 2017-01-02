@@ -146,8 +146,10 @@ function showDivs(n) {
 
 						@if($a->count() > 1)
 
+						<?php $b = 1 ?>
 						@foreach($musicas->artistas()->get() as $artistas)
-						<a href="artista/{{$artistas->id}}">{{$artistas->nome}}, </a>	
+						<?php $c = $a->count() ?>
+						<a class="musica-artista"  href="artista/{{$artistas->id}}">{{$artistas->nome}}@if($b < $c),<?php $b++?> @endif @if($b == $c) @endif</a>	
 						@endforeach
 
 						@endif
@@ -155,25 +157,26 @@ function showDivs(n) {
 						@if($a->count() == 1)
 
 						@foreach($musicas->artistas()->get() as $artistas)
-						<a href="artista/{{$artistas->id}}">{{$artistas->nome}} </a>
+						<a class="musica-artista" href="artista/{{$artistas->id}}">{{$artistas->nome}} </a>
 						@endforeach
 
 						@endif
 					</td>
 					
 					<td>
-						<?php $b=$musicas->album()->get() ?>
+						<?php $a=$musicas->album()->get() ?>
 
-						@if($b->count() > 1)
-
+						@if($a->count() > 1)
+						<?php $b = 1 ?>
 
 						@foreach($musicas->album()->get() as $album)
-						<a href="album/{{$album->id}}">	{{$album->nome}}, </a>
+						<?php $c = $a->count() ?>
+						<a href="album/{{$album->id}}">	{{$album->nome}}@if($b < $c),<?php $b++?> @endif @if($b == $c)@endif </a>
 						@endforeach
 
 						@endif
 
-						@if($b->count() == 1)
+						@if($a->count() == 1)
 
 						@foreach($musicas->album()->get() as $album)
 						<a href="album/{{$album->id}}">	{{$album->nome}} </a>

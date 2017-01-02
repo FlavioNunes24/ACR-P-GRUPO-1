@@ -23,8 +23,7 @@
 
         <strong>O que é?</strong>
 
-        <p>Somos uma loja de musica que pernenrf freb fre fre frere jn
-        fsdfsdsdfsdfsd</p>
+        <p>Com a Music Planet pode ouvir milhares de músicas.Para começar já a experimentar, basta criar uma conta, escolher que músicas comprar e começar a ouvir música no seu computador. </p>
         
 
         <strong>O que tem para oferecer?</strong>
@@ -71,8 +70,7 @@
 
         <strong>Preciso registo para comprar?</strong>
 
-        <p>Somos uma loja de musica que pernenrf freb fre fre frere jn
-        fsdfsdsdfsdfsd</p>
+        <p>Primeiro é necessario criar uma conta com os seus dados pessoais, carregar a conta e pode começar a comprar.</p>
 
         <strong>Como comprar?</strong>
 

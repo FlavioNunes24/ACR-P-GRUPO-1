@@ -89,7 +89,7 @@
                                 <ul class="dropdown-menu" role="menu">
                                 <li>
                                         <a>
-                                            Saldo: <strong>{{Auth::user()->saldo}}€</strong>
+                                            Saldo: <label class = "saldo" ><strong>{{Auth::user()->saldo}}€</strong></label>
                                         </a>
                                     </li>
 								   <li>

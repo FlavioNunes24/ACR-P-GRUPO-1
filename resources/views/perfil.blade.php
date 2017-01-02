@@ -60,6 +60,7 @@
 				<th>Artista</th>
 				<th>Duração</th>
 				<th>Data de Lançamento</th>
+				<th></th>
 			</tr>
 		</thead>
 
@@ -71,14 +72,16 @@
 
 						@foreach($compra->musica()->get() as $musica)
 
-						<td><a href="musica/{{$musica->id}}">{{$musica->titulo}}</a></td>
+						<td><a class = "musica-titulo" href="musica/{{$musica->id}}">{{$musica->titulo}}</a></td>
 						<td>
 							<?php $a=$musica->artistas()->get() ?>
 
 							@if($a->count() > 1)
+							<?php $b = 1 ?>
 
 							@foreach($musica->artistas()->get() as $artistas)
-							<a href="artista/{{$artistas->id}}">{{$artistas->nome}}, </a>	
+							<?php $c = $a->count() ?>
+							<a class="musica-artista" href="artista/{{$artistas->id}}">{{$artistas->nome}}@if($b < $c),<?php $b++?> @endif @if($b == $c) @endif</a> 	
 							@endforeach
 
 							@endif
@@ -86,13 +89,15 @@
 							@if($a->count() == 1)
 
 							@foreach($musica->artistas()->get() as $artistas)
-							<a href="artista/{{$artistas->id}}">{{$artistas->nome}} </a>
+							<a class="musica-artista" href="artista/{{$artistas->id}}">{{$artistas->nome}} </a>
 							@endforeach
 
 							@endif
 						</td>
 						<td>{{$musica->duracao}}</td>
 						<td>{{$musica->data_lancamento}}</td>
+						<td><td><a href="/download/music/{{$musica->path}}" download> <button class = "btn-download" >Download</button> 
+						</a></td></td>
 						
 
 						@endforeach

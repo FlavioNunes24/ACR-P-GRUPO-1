@@ -67,9 +67,12 @@
 				<?php $a=$abcd->artistas()->get() ?>
 
 				@if($a->count() > 1)
+				<?php $b = 1 ?>
 				
 				@foreach($abcd->artistas()->get() as $artistas)
-				<a href="artista/{{$artistas->id}}">{{$artistas->nome}}, </a>	
+				<?php $c = $a->count() ?>
+				<a class="musica-artista" href="artista/{{$artistas->id}}">{{$artistas->nome}}@if($b < $c),<?php $b++?> @endif
+				@if($b == $c) @endif </a>	
 				@endforeach
 				
 				@endif
@@ -77,7 +80,7 @@
 				@if($a->count() == 1)
 
 				@foreach($abcd->artistas()->get() as $artistas)
-				<a href="artista/{{$artistas->id}}">{{$artistas->nome}} </a>
+				<a class="musica-artista" href="artista/{{$artistas->id}}">{{$artistas->nome}} </a>
 				@endforeach
 
 				@endif
@@ -88,18 +91,21 @@
 
 
 				<td>
-				<?php $b=$abcd->album()->get() ?>
+				<?php $a=$abcd->album()->get() ?>
 
-				@if($b->count() > 1)
+				@if($a->count() > 1)
+				<?php $b = 1 ?>
 				
 			
 				@foreach($abcd->album()->get() as $album)
-				<a href="album/{{$album->id}}">	{{$album->nome}}, </a>
+				<?php $c = $a->count() ?>
+				<a href="album/{{$album->id}}">	{{$album->nome}}@if($b < $c),<?php $b++?> @endif
+				@if($b == $c) @endif  </a>
 				@endforeach
 				
 				@endif
 
-				@if($b->count() == 1)
+				@if($a->count() == 1)
 
 				@foreach($abcd->album()->get() as $album)
 				<a href="album/{{$album->id}}">	{{$album->nome}} </a>

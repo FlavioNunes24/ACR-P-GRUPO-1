@@ -77,10 +77,36 @@
 					@endif
 					</td>
 						<td>
-							@foreach($musicas->artistas()->get() as $artistas)
-								<a href="/artista/{{$artistas->id}}">{{$artistas->nome}} </a>
-							@endforeach
-						</td>
+
+				<?php $a=$musicas->artistas()->get() ?>
+
+				@if($a->count() > 1)
+
+				<?php $b = 1?>
+
+
+				@foreach($musicas->artistas()->get() as $artistas)
+			
+
+				<?php $c = $a->count() ?>
+				
+				
+				<a class="musica-artista" href="artista/{{$artistas->id}}">{{$artistas->nome}}@if($b < $c),<?php $b++?> @endif
+				@if($b == $c) @endif
+				
+				</a>	
+
+				@endforeach
+				@endif
+
+				@if($a->count() == 1)
+
+				@foreach($musicas->artistas()->get() as $artistas)
+				<a class="musica-artista" href="artista/{{$artistas->id}}">{{$artistas->nome}} </a>
+				@endforeach
+
+				@endif
+				</td>
 						<td>{{$musicas->duracao}}</td>
 						<td>{{$musicas->data_lancamento}}</td>	
 						<td>{{$musicas->preco}}</td>
