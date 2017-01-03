@@ -89,6 +89,7 @@ function showDivs(n) {
 			<th>Artistas</th>
 			<th>Album</th>
 			<th>Lançado</th>
+			<th>Preview</th>
 			<th>Preço</th>
 			@if(Auth::check())
 			<th></th>
@@ -186,6 +187,13 @@ function showDivs(n) {
 					</td>
 					
 					<td>{{$musicas->data_lancamento}}</td>
+						
+					<td>
+					
+						<a onclick="this.firstChild.play()" class="button"><audio src="/music/preview/{{$caminho = $musicas->pathPreview}}"></audio>&#9658;</a>
+
+					</td>
+						
 					<td ><p>{{$musicas->preco}}</p></td>
 					
 					@if(Auth::check())

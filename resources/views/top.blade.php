@@ -27,6 +27,7 @@
 				<th>Gênero</th>
 				<th>Album</th>
 				<th>Lançado</th>
+				<th>Preview</th>
 				<th>Preço</th>
 				@if(Auth::check())
 				<th></th>
@@ -119,6 +120,13 @@
 
 
 			<td>{{$abcd->data_lancamento}}</td>
+				
+			<td>
+
+				<a onclick="this.firstChild.play()" class="button"><audio src="/music/preview/{{$caminho = $abcd->pathPreview}}"></audio>&#9658;</a>
+
+			</td>	
+			
 			<td>{{$abcd->preco}}</td>
 			@if(Auth::check())
 				@php ($i=0)

@@ -27,6 +27,7 @@
 				<th>Gênero</th>
 				<th>Album</th>
 				<th>Lançado</th>
+				<th>Preview</th>
 				<th>Preço</th>
 				@if(Auth::check())
 				<th></th>
@@ -110,6 +111,13 @@
 				@endforeach
 				
 				<td>{{$musicas->data_lancamento}}</td>
+					
+				<td>
+					
+					<a onclick="this.firstChild.play()" class="button"><audio src="/music/preview/{{$caminho = $musicas->pathPreview}}"></audio>&#9658;</a>
+					
+				</td>
+					
 				<td>{{$musicas->preco}}</td>
 				@if(Auth::check())
 					@if($i == 0)
@@ -139,6 +147,7 @@
 					<th>Gênero</th>
 					<th>Album</th>
 					<th>Lançado</th>
+					<th>Preview</th>
 					<th>Preço</th>
 					@if(Auth::check())
 					<th></th>
@@ -207,6 +216,13 @@
 					@endforeach
 
 					<td>{{$gravadoras->data_lancamento}}</td>
+						
+					<td>
+					
+						<a onclick="this.firstChild.play()" class="button"><audio src="/music/preview/{{$caminho = $gravadoras->pathPreview}}"></audio>&#9658;</a>
+
+					</td>
+						
 					<td>{{$gravadoras->preco}}</td>
 					@if(Auth::check())
 					@if($i == 0)
@@ -236,6 +252,7 @@
 					<th>Gênero</th>
 					<th>Album</th>
 					<th>Lançado</th>
+					<th>Preview</th>
 					<th>Preço</th>
 					@if(Auth::check())
 					<th></th>
@@ -296,6 +313,13 @@
 						</td>
 						@endforeach
 						<td>{{$album_musicas->data_lancamento}}</td>
+							
+						<td>
+					
+							<a onclick="this.firstChild.play()" class="button"><audio src="/music/preview/{{$caminho = $album_musicas->pathPreview}}"></audio>&#9658;</a>
+
+						</td>
+							
 						<td>{{$album_musicas->preco}}</td>
 						@if(Auth::check())
 						@if($i == 0)
@@ -324,6 +348,7 @@
 					<th>Gênero</th>
 					<th>Album</th>
 					<th>Lançado</th>
+					<th>Preview</th>
 					<th>Preço</th>
 					@if(Auth::check())
 					<th></th>
@@ -385,6 +410,13 @@
 						</td>
 						@endforeach
 						<td>{{$artistas_musicas->data_lancamento}}</td>
+							
+						<td>
+					
+							<a onclick="this.firstChild.play()" class="button"><audio src="/music/preview/{{$caminho = $artistas_musicas->pathPreview}}"></audio>&#9658;</a>
+
+						</td>
+							
 						<td>{{$artistas_musicas->preco}}</td>
 						@if(Auth::check())
 						@if($i == 0)
