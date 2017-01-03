@@ -54,7 +54,7 @@
 				@foreach($musicas->album()->get() as $album)
 				@if($musicas->album()->count() == 1)
 				<td>	<a href="/album/{{$album->id}}">
-                      		<img src ="/images/{{$album->pathImagem}}" id = "album">
+                      		<img src ="/images/album/{{$album->pathImagem}}" id = "album">
                     	</a>
                 </td>
                 @endif
@@ -174,7 +174,7 @@
 					@foreach($gravadoras->album()->get() as $album)
 					@if($gravadoras->album()->count() == 1)
 					<td>	<a href="album/{{$album->id}}">
-								<img src ="/images/{{$album->pathImagem}}" id = "album">
+								<img src ="/images/album/{{$album->pathImagem}}" id = "album">
 							</a>
 					</td>
 					@endif
@@ -279,7 +279,7 @@
 						@foreach($album_musicas->album()->get() as $albums_musicas)
 						@if($album_musicas->album()->count() == 1)
 							<td>	<a href="album/{{$albums_musicas->id}}">
-								<img src ="/images/{{$albums_musicas->pathImagem}}" id = "album">
+								<img src ="/images/album/{{$albums_musicas->pathImagem}}" id = "album">
 							</a>
 							</td>
 							@endif
@@ -375,7 +375,7 @@
 						@foreach($artistas_musicas->album()->get() as $artista_musicas)
 							@if($artistas_musicas->album()->count() == 1)
 							<td>	<a href="album/{{$artista_musicas->id}}">
-								<img src ="/images/{{$artista_musicas->pathImagem}}" id = "album">
+								<img src ="/images/album/{{$artista_musicas->pathImagem}}" id = "album">
 							</a>
 							</td>
 							@endif
