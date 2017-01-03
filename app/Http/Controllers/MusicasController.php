@@ -29,11 +29,7 @@ class MusicasController extends Controller
 		
 		if($user)
 		$compras = $user->compra()->get();
-		
-		//$musica = Musica::find(1);
-		//$artista = Artista::with('musicas')->first();
-		//$user = Auth::user();
-		//$compras = $user->compra()->get();
+
 		
 
 	return view('musicas',compact('musica','compras'));
@@ -41,19 +37,7 @@ class MusicasController extends Controller
 	
 	public function compra(Request $request)
 	{
-	/*$response = array(
-            'status' => 'success',
-            'msg' => 'Setting created successfully',
-        );
-        return \Response::json($response);*/
-		/*$compra = new App\Compra;
-		$compra->id_utilizador = 1; //falta meter
-		$compra->data_alteracao = date("Y-m-d");
-		$compra->save();
-		$compraMusica = new App\Compra_musica;
-		$compraMusica->id_musica = $request->id;
-		$compraMusica->id_compra = $compra->id;
-		$compraMusica->save(); */
+
 		$user = Auth::user();
 		$saldo = Auth::user()->saldo;
 		$musica = Musica::find($request->id);
@@ -77,29 +61,12 @@ class MusicasController extends Controller
 		$response = array(
     		'sucesso' => $compra->exists ? 1 : 0);
 			
-		//return \Response::json($response)->with('message','Compra efectuada com sucesso');
 		return response()->json($response);
-		//return redirect('/musicas')->with('message','Música comprada com sucesso!');
+
 	}
 
 	
-	/*public function download(Request $request)
-	{
-		$musica = Musica::find($request->id);
-		$name= "asd";
-		$publicpath = public_path();
-		$path = $publicpath;
-		$musicpath= $musica->path;
-		
-		//return response()->download($pathToFile);
-		return response()->download($musicpath, $name);
-		
-		$file= public_path()."/".$musica->path;
-		return response()->download($file);
-		
-		
-		
-	} */
+
 	
 	public function album($id)
 	{
