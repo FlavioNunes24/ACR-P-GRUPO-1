@@ -136,8 +136,6 @@ class GestaoController extends Controller
 
 		$album->nome = $request->nome;
 		$album->data_lancamento = $request->data_lancamento;
-		$album->artista_id = '1';
-		$album->preco = '12';
 		if(Input::hasFile('file')){
 			$file = $request->file;
 			$file ->move(public_path().'/images/album',$file->getClientOriginalName());

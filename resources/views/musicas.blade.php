@@ -32,6 +32,7 @@
 				<th>Gênero</th>
 				<th>Album</th>
 				<th>Lançado</th>
+				<th>Preview</th>
 				<th>Preço</th>
 				@if(Auth::check())
 				<th></th>
@@ -91,7 +92,7 @@
 
 				@if($a->count() > 1)
 
-				<?php $b = 1?>
+				<?php $b = 1 ?>
 
 
 				@foreach($musicas->artistas()->get() as $artistas)
@@ -100,13 +101,12 @@
 				<?php $c = $a->count() ?>
 				
 				
-				<a class="musica-artista" href="artista/{{$artistas->id}}">{{$artistas->nome}}@if($b < $c),<?php $b++?> @endif @if($b == $c) @endif
-				
-				</a>	
+				<a class="musica-artista" href="artista/{{$artistas->id}}">{{$artistas->nome}}
+				@if($b < $c),<?php $b++?> @endif @if($b == $c) @endif </a>	
 
 				@endforeach
 				@endif
-
+	
 				@if($a->count() == 1)
 
 				@foreach($musicas->artistas()->get() as $artistas)
@@ -131,7 +131,7 @@
 				@foreach($musicas->album()->get() as $album)
 				<?php $c = $a->count() ?>
 
-				<a href="album/{{$album->id}}">	{{$album->nome}}@if($b < $c),<?php $b++?> @endif
+					<a href="album/{{$album->id}}">	{{$album->nome}}@if($b < $c),<?php $b++?> @endif
 				@if($b == $c) @endif</a>
 
 				@endforeach
@@ -149,7 +149,12 @@
 				
 				
 				<td>{{$musicas->data_lancamento}}</td>
-				<td >{{$musicas->preco}}</td>
+				<td>
+					
+					<a onclick="this.firstChild.play()" class="button"><audio src="/music/preview/{{$caminho = $musicas->pathPreview}}"></audio>&#9658;</a>
+					
+				</td>
+				<td>{{$musicas->preco}}</td>
 				
 					
 				@if(Auth::check())

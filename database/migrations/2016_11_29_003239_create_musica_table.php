@@ -22,6 +22,7 @@ class CreateMusicaTable extends Migration
             $table->string('descricao');
             $table->decimal('duracao',10,2);
             $table->string('path');
+		   	$table->string('pathPreview');
             $table->integer('genero_id')->unsigned();
             $table->foreign('genero_id')->references('id')->on('genero');
 

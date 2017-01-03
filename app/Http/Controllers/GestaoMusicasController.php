@@ -85,6 +85,16 @@ class GestaoMusicasController extends Controller
             $request->file('file')->move(public_path().'/music', $file->getClientOriginalName());
             $musica -> path = $file->getClientOriginalName();     
         }
+		
+
+		if($request->hasFile('preview'))
+        {
+
+            $file = $request ->file('preview');
+            $request->file('preview')->move(public_path().'/music/preview', $file->getClientOriginalName());
+            $musica -> pathPreview = $file->getClientOriginalName();     
+        }
+		
         $musica->save();
 
        //fazer correspondencia da musica com os albuns e com os artistas

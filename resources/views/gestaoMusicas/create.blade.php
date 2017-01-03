@@ -83,14 +83,19 @@
 	</div>
 
 	<br>
-	<label>Escolha o ficheiro para upload: </label>
+	<label>Escolha o ficheiro da música para upload: </label>
 	<input type="file" name="file" id ="file" class="form-control" >
+	<br>
+	
+	<br>
+	<label>Escolha o ficheiro de preview para upload: </label>
+	<input type="file" name="preview" id ="preview" class="form-control" >
 	<br>
 	<div class="form-group">
 	<input type="submit" class="btn btn-success" value="Guardar">
-	
+	</div>
 	</form>
-		</div>
+		
 	</div>
 
 </div>
