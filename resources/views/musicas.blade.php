@@ -151,7 +151,7 @@
 				<td>{{$musicas->data_lancamento}}</td>
 				<td>
 					
-					<a onclick="this.firstChild.play()" class="button"><audio src="/music/preview/{{$caminho = $musicas->pathPreview}}"></audio>&#9658;</a>
+					<a onclick="this.firstChild.play()" class="button"><audio preload="none" src="/music/preview/{{$caminho = $musicas->pathPreview}}"></audio>&#9658;</a>
 					
 				</td>
 				<td>{{$musicas->preco}}</td>
@@ -170,8 +170,7 @@
 		@endforeach
 		</tbody>
 	</table>
-	
-	<script>
+<script>
 		function efectuaCompra(id){
 			$.ajax({
 				type: "POST", 
@@ -194,6 +193,5 @@
 			});
 		}
 	</script>
-
 
 @endsection

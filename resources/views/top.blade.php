@@ -123,7 +123,7 @@
 				
 			<td>
 
-				<a onclick="this.firstChild.play()" class="button"><audio src="/music/preview/{{$caminho = $abcd->pathPreview}}"></audio>&#9658;</a>
+				<a onclick="this.firstChild.play()" class="button"><audio preload="none" src="/music/preview/{{$caminho = $abcd->pathPreview}}"></audio>&#9658;</a>
 
 			</td>	
 			
