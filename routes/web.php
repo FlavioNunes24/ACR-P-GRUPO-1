@@ -20,6 +20,11 @@
 
 Auth::routes();
 
+Route::get('/music/{caminho}', function()
+		   {
+	dd('asd');
+});
+
 Route::get('/home', 'HomeController@index');
 
 Route::get('/', 'PagesController@home');
@@ -85,6 +90,8 @@ Route::get('/musica/{id}','MusicasController@musica');
 
 Route::get('/perfil/saldo/{id}','PerfilController@saldo');
 Route::post('/perfil/saldo/user','PerfilController@adicionarSaldo');
+
+
 
 
 //ROTAS API
