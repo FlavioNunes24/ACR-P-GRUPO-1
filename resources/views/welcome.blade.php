@@ -189,10 +189,16 @@ function showDivs(n) {
 					
 					<td>{{$musicas->data_lancamento}}</td>
 						
+<<<<<<< HEAD
 					<td class="centro">
 						<div class="button-alt-welcome">
 						<a onclick="this.firstChild.play()" class="button"><audio src="/music/preview/{{$caminho = $musicas->pathPreview}}"></audio>&#9658;</a>
 						</div>
+=======
+					<td>
+					
+						<a onclick="this.firstChild.play()" class="button"><audio preload="none" src="/music/preview/{{$caminho = $musicas->pathPreview}}"></audio>&#9658;</a>
+>>>>>>> origin/master
 
 					</td>
 						

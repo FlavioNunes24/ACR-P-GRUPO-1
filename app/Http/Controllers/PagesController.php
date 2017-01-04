@@ -76,4 +76,9 @@ class PagesController extends Controller
 	public function download($caminho)
 	{
 	}
+	
+	public function redirect($caminho)
+	{
+		return redirect('/');
+	}
 }
