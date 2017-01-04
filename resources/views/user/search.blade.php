@@ -123,7 +123,7 @@
 					@if($i == 0)
 						<td><button type="button" onclick="efectuaCompra({{$musicas->id}})">Comprar</button></td>
 					@else
-						<td><a href="/download/music/{{$musicas->path}}" download> Download
+						<td><a class="btn-download" href="/download/music/{{$musicas->path}}" download> Download
 						</a></td>
 					@endif
 				@endif
@@ -228,7 +228,7 @@
 					@if($i == 0)
 						<td><button type="button" onclick="efectuaCompra({{$gravadoras->id}})">Comprar</button></td>
 					@else
-						<td><a href="/download/music/{{$gravadoras->path}}" download> Download
+						<td><a class="btn-download" href="/download/music/{{$gravadoras->path}}" download> Download
 						</a></td>
 					@endif
 				@endif
@@ -323,7 +323,7 @@
 						<td>{{$album_musicas->preco}}</td>
 						@if(Auth::check())
 						@if($i == 0)
-							<td><button type="button" onclick="efectuaCompra({{$album_musicas->id}})">Comprar</button></td>
+							<td><button class="btn-download" type="button" onclick="efectuaCompra({{$album_musicas->id}})">Comprar</button></td>
 						@else
 							<td><a href="/download/music/{{$album_musicas->path}}" download> Download
 							</a></td>
@@ -420,9 +420,9 @@
 						<td>{{$artistas_musicas->preco}}</td>
 						@if(Auth::check())
 						@if($i == 0)
-							<td><button type="button" onclick="efectuaCompra({{$artistas_musicas->id}})">Comprar</button></td>
+							<td><button type="button" class = "btn-compra" onclick="efectuaCompra({{$artistas_musicas->id}})">Comprar</button></td>
 						@else
-							<td><a href="/download/music/{{$artistas_musicas->path}}" download> Download
+							<td><a class="btn-download" href="/download/music/{{$artistas_musicas->path}}" download> Download
 							</a></td>
 						@endif
 					@endif
