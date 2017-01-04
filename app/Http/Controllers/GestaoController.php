@@ -34,6 +34,7 @@ class GestaoController extends Controller
 		
 	}
 
+/*
 	public function upload(Request $request)
 	{
 
@@ -81,7 +82,7 @@ class GestaoController extends Controller
 	}
 
 
-
+*/
 
 	public function gestaoAlbum()
 	{

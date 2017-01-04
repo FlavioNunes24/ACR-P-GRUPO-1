@@ -140,10 +140,11 @@ class GestaoMusicasController extends Controller
     {
    
         $musica = Musica::findOrFail($id);
-        $genero = Genero::all();
+        $genero = Genero::all(); 
+        $album = Album::all();
+        $artista = $musica->artistas()->get();
 
-        //para ir para a pagina de edição
-        return view('gestaoMusicas.edit',compact('musica','genero'))->with('message','Musica eliminada com sucesso');
+        return view('gestaoMusicas.edit',compact('musica','genero'));
     }
 
     /**
@@ -177,10 +178,6 @@ class GestaoMusicasController extends Controller
         $musica -> preco = $request->preco;
         $musica -> descricao = $request->descricao;
         $musica -> duracao = $request->duracao;
-
-        //$file = $request->file('file');
- 
-   
         $musica->save();
 
         return redirect ()->route('gestaoMusicas.index');

@@ -22,6 +22,11 @@
   text-decoration: underline;
 }
 
+.email-tam{
+overflow: auto;
+
+}
+
 .button {
    border: none;
    background-color: #3BA8CC;
@@ -32,9 +37,13 @@
    font-family: helvetica, serif;
    text-decoration: none;
    vertical-align: middle;
+   margin-left: 18%;
 
 }
 
+.btn-download-center{
+  margin-top: 12%;
+}
 
 .button:hover {
    border: none;
@@ -171,9 +180,10 @@ saldo-user{
     padding: 8px 25px;
     padding: 1.0vw;
     border-radius: 5px;
-    font-family: "Arial;
+    font-family: "Arial";
      text-align: center;
     font-weight: bold;
+    font-size: 1.3vw;
   }
 
 .btn-compra:hover
@@ -401,4 +411,7 @@ b, optgroup, strong {
     font-size: 1.3vw;
 }
 
+.top-margin{
+  margin-top: 15px;
+}
 

@@ -121,17 +121,13 @@
 
 			<td>{{$abcd->data_lancamento}}</td>
 				
-<<<<<<< HEAD
-			<td class = "centro">
-				<div class="button-alt">
-				<a onclick="this.firstChild.play()" class="button"><audio src="/music/preview/{{$caminho = $abcd->pathPreview}}"></audio>&#9658;</a>
-				</div>
-=======
+				
+
 			<td>
-
+				<div class="button-alt">
 				<a onclick="this.firstChild.play()" class="button"><audio preload="none" src="/music/preview/{{$caminho = $abcd->pathPreview}}"></audio>&#9658;</a>
+				</div>
 
->>>>>>> origin/master
 			</td>	
 			
 			<td>{{$abcd->preco}}</td>

@@ -6,7 +6,7 @@
 
 
 @section('content')
-	<button onclick="goBack()">«Voltar Atrás</button>
+	<button class="btn-download" onclick="goBack()">«Voltar Atrás</button>
 			<script>
 					function goBack() {
 						window.history.back();
@@ -39,7 +39,7 @@
 					<td>{{$user->username}}</td>
 					<td>{{$user->pais}}</td>
 					<td>{{$user->data_nasc}}</td>
-					<td>{{$user->email}}</td>
+					<td class="email-tam">{{$user->email}}</td>
 					<td>{{$user->saldo}}</td>
 					<td><a class="btn btn-success" href="/perfil/editar/{{$user->id}}">Editar</a></td>
 

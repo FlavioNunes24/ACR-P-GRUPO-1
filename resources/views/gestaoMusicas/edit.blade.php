@@ -61,12 +61,16 @@
 	</select>
 	</div>
 
+
+
 	<div class="form-group">
 	<label>Descrição: </label><br>
 	<input type="textarea" name="descricao" class="form-control" value ="{{$musica->descricao}}" ><br>
 	</div>
 
 	<strong><p>Impossivel alterar a música carregada</p></strong><br>
+
+	<strong><p>Impossivel alterar a preview da música carregada</p></strong><br>
 
 	<div class="form-group">
 	<input type="submit" class="btn btn-primary" value="Guardar">

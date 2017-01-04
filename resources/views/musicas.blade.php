@@ -38,6 +38,7 @@
 				<th></th>
 				@endif
 			</tr>
+			
 		</thead>
 		<tbody>
 		@foreach($musica as $musicas)
@@ -53,10 +54,12 @@
 				@endif
 				
 				<tr class="abcda">
+				<div class="top-margin">
 				@foreach($musicas->album()->get() as $album)
 
 					@if($musicas->album()->count() == 1)
 				<td >
+
 
 					<a href="album/{{$album->id}}">
                    	 <img src ="/images/album/{{$album->pathImagem}}" id = "album">
@@ -148,17 +151,12 @@
 				
 				
 				<td>{{$musicas->data_lancamento}}</td>
-<<<<<<< HEAD
-				<td class = "centro">
-					<div class="button-alt">
-					<a onclick="this.firstChild.play()" class="button"><audio src="/music/preview/{{$caminho = $musicas->pathPreview}}"></audio>&#9658;</a>
-					</div>
-=======
+
 				<td>
-					
+					<div class="button-alt">
 					<a onclick="this.firstChild.play()" class="button"><audio preload="none" src="/music/preview/{{$caminho = $musicas->pathPreview}}"></audio>&#9658;</a>
-					
->>>>>>> origin/master
+					</div>
+
 				</td>
 				<td>{{$musicas->preco}}</td>
 				
@@ -167,12 +165,15 @@
 					@if($i == 0)
 						<td><button class = "btn-compra" type="button" onclick="efectuaCompra({{$musicas->id}})">Comprar</button></td>
 					@else
-						<td><a href="/download/music/{{$musicas->path}}" download> <button class = "btn-download" >Download</button> 
+						<td>
+
+						<a href="/download/music/{{$musicas->path}}" download> <button class = "btn-download" >Download</button> 
 						</a></td>
 					@endif
 				@endif
+</div>
 			</tr>
-	
+		
 		@endforeach
 		</tbody>
 	</table>

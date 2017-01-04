@@ -30,7 +30,7 @@ Route::get('/home', 'HomeController@index');
 Route::get('/', 'PagesController@home');
 
 
-Route::get('/musicas', 'MusicasController@index');
+/*Route::get('/musicas', 'MusicasController@index');*/
 
 Route::get('/musicas', 'MusicasController@show');
 
@@ -49,7 +49,7 @@ Route::get('/admin/{id}', 'GestaoController@edit_tipo')->middleware('auth', 'adm
 
 Route::get('/gestao', 'GestaoController@index') ->middleware('auth', 'admin'); //Rotas para admin
 
-Route::post('/gestao','GestaoController@upload')->middleware('auth','admin'); //Rotas para admin
+/*Route::post('/gestao','GestaoController@upload')->middleware('auth','admin'); //Rotas para admin*/
 
 Route::post('/musicas/compra','MusicasController@compra')->middleware('auth');
 
@@ -60,7 +60,7 @@ Route::group(['middleware' => ['auth','admin']], function () {
 
 			});//Rotas para admin
 
-Route::get('/artistas/{id}', 'PagesController@artistas');
+/*Route::get('/artistas/{id}', 'PagesController@artistas');*/
 
 
 Route::get('/perfil/editar/{id}','PerfilController@editar')->middleware('auth'); //Já está protegido contra outros utilizadores
