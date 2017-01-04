@@ -81,6 +81,7 @@ function showDivs(n) {
 <hr>
 <h3>Músicas mais recentes</h3>
 <hr>
+
 <table class="table table-striped">
 	<thead>
 		<tr>
@@ -96,7 +97,7 @@ function showDivs(n) {
 			@endif
 		</tr>
 	</thead>
-	<tbody>
+
 		@foreach($recent as $musicas)
 			@php ($i=0)
 				@if(Auth::check())
@@ -188,13 +189,14 @@ function showDivs(n) {
 					
 					<td>{{$musicas->data_lancamento}}</td>
 						
-					<td>
-					
+					<td class="centro">
+						<div class="button-alt-welcome">
 						<a onclick="this.firstChild.play()" class="button"><audio src="/music/preview/{{$caminho = $musicas->pathPreview}}"></audio>&#9658;</a>
+						</div>
 
 					</td>
 						
-					<td ><p>{{$musicas->preco}}</p></td>
+					<td >{{$musicas->preco}}</td>
 					
 					@if(Auth::check())
 					@if($i == 0)
@@ -208,7 +210,7 @@ function showDivs(n) {
 					
 		@endforeach
 				
-	</tbody>
+	
 </table>
 
 <script>

@@ -9,43 +9,69 @@
 
 
 #album{
-  margin-top: 5%;
-	width: 40px;
-	height: 40px;
+  margin-top: 4%;
+	width: 3.6vw;
+	height:4.1vw;
+  vertical-align: center;
+      margin-bottom: -6px;
+    margin-left: -3px;
+    margin-top: -4px;
 
+}
+.musica-link:hover{
+  text-decoration: underline;
 }
 
 .button {
    border: none;
    background-color: #3BA8CC;
-   padding: 14%;
+   padding: 14px;
+   padding: 1.1vw;
    font-size: 14px;
+   font-size: 1.1vw;
    font-family: helvetica, serif;
    text-decoration: none;
    vertical-align: middle;
-   }
+
+}
+
+
 .button:hover {
    border: none;
    background-color: #63C9EB;
    color: #fff;
    }
 .centro{
-  text-align: center;
-  
+  text-align: center; 
 }
 
+.button-alt{
+}
 
+.button-alt-welcome{
+    margin-top: 10%;
+    margin-right: 47%;
+}
+
+table { 
+  table-layout:fixed;
+  font-size: 1.0vw;
+
+ }
 
 .foto{
 
-	width:200px; 
-	height:200px; 
+	width:14vw; 
+	height:14vw; 
 	float:left; 
 	border-radius:20% 50%; 
 	margin-bottom:50px; 
 	margin-top:10px;";
 }
 
+p{
+  font-size: 1.4vw;
+}
 body {
 	background-image:url("/images/background_home.png");
 	background-repeat: no-repeat;
@@ -72,9 +98,13 @@ p{
 .table-striped th{
 
   font-size: 18px;
+   font-size: 1.0vw;
+
 }
 
-
+.saldo-app{
+  font-weight: bold;
+}
 
 .top{
     color: #ff6900;
@@ -82,6 +112,7 @@ p{
     font-weight: 800;
     font-family: sans-serif;
     font-size: 16px;
+    margin-top: 10%;
   }
 
 
@@ -121,8 +152,10 @@ saldo-user{
 .btn-compra{
     background-color: #ff6900;
     border: medium none;
+    
     color: #fff;
     padding: 8px 25px;
+    padding: 1.0vw;
     border-radius: 10px;
     text-align: center;
     font-family: "Arial";
@@ -134,15 +167,16 @@ saldo-user{
 	color: #fff;
     border: medium none;
     padding: 8px 25px;
+    padding: 1.0vw;
     border-radius: 5px;
-    font-family: "Arial";
+    font-family: "Arial;
      text-align: center;
     font-weight: bold;
+  }
 
-}
-
-.btn-compra:hover {
-    background-color: #F26B0C;
+.btn-compra:hover
+{
+  background-color: #F26B0;
     color: white;
 
 }
@@ -152,6 +186,7 @@ saldo-user{
     border: medium none;
     color: #fff;
     padding: 7px 20px;
+    padding: 1.0vw;
     border-radius: 5px;
     font-family: "Arial";
     font-weight: bold;
@@ -171,18 +206,19 @@ saldo-user{
 .titulo-pagina{
 
   text-align:left;
-  font-size:4em;
+  font-size:4vw;
   color:#797C7D;
   letter-spacing: -2px;
   font-weight:900;
   text-transform:uppercase;
   text-shadow:0px 0px 1px #C5C8C9,
       0px 0px 7px #fff;
+      f
 }
 
 .subtitulo-pagina{
   text-align:left;
-  font-size:2em;
+  font-size:2vw;
   color:#797C7D;
   letter-spacing: -1px;
   font-weight:500;
@@ -206,11 +242,7 @@ table td {
 	color: #464647;
 }
 
-table th{
-	color: #1F2224;
 
-
-}
 
 p{
   color: #1F2224;
@@ -247,7 +279,7 @@ html, body{
 }
 
 .wrapper:after, footer{
-  height: 250px;
+  height: 300px;
 }
 
 
@@ -271,11 +303,13 @@ footer{
   padding-bottom: 20px;
   font-weight: 700;
   font-family: Arial;
+  font-size: 1.6vw;
 
 }
 
 .contactos p{
   color: #646F73;
+  font-size: 1.2vw;
 }
 
 div.contactos{
@@ -290,6 +324,7 @@ div.contactos{
   padding-bottom: 20px;
   font-weight: 700;
   font-family: Arial;
+  font-size: 1.8vw;
 }
 
 div.redes-sociais{
@@ -300,8 +335,8 @@ div.redes-sociais{
 
 div.menu{
   float: right;
-  margin-right:310px;
-  margin-top: 30px;
+  margin-right:43%;
+  margin-top: -9%;
 
 }
 
@@ -310,6 +345,7 @@ div.menu{
   padding-bottom: px;
   font-weight: 700;
   font-family: Arial;
+  font-size: 1.6vw;
 }
 
 
@@ -325,11 +361,12 @@ footer ul li a{
   color: #F26B0C;
   font-family: arial;
   text-decoration: none;
+  font-size: 1.4vw;
 }
 
 img{
-  width: 39px;
-  height: 39px;
+  width: 3vw;
+  height: 3vw;
 }
 
 audio {
@@ -342,6 +379,7 @@ audio {
   color:#009FD4;
   font-size: 16px;
   font-weight: 900px;
+   font-size: 1.0vw;
 }
 .musica-artista:hover{
   color:#009FD4;
@@ -355,5 +393,10 @@ audio {
   color:#009FD4;
 }
 
+
+b, optgroup, strong {
+    font-weight: 700;
+    font-size: 1.3vw;
+}
 
 

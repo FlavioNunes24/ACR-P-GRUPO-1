@@ -21,7 +21,7 @@
 
 
 
-	<table class="table table-striped">
+	<table  class="table table-striped">
 		<thead>
 			<tr>
 			
@@ -67,7 +67,7 @@
 				@endforeach
 
 					@if($musicas->album()->count() > 1)
-					<td>
+					<td >
 						<a href="album/{{$album->id}}">
                    	 <img src ="/images/album/{{$album->pathImagem}}" id = "album">
                		</a>
@@ -78,9 +78,9 @@
 
 
 				
-				<td >
+				<td>
 					@if($i == 1)
-					<a  href="musica/{{$musicas->id}}">{{$musicas->titulo}}</a>
+					<a class="musica-link" href="musica/{{$musicas->id}}">{{$musicas->titulo}}</a>
 					@else
 						{{$musicas->titulo}}
 					@endif
@@ -101,8 +101,7 @@
 				<?php $c = $a->count() ?>
 				
 				
-				<a class="musica-artista" href="artista/{{$artistas->id}}">{{$artistas->nome}}
-				@if($b < $c),<?php $b++?> @endif @if($b == $c) @endif </a>	
+				<a class="musica-artista" href="artista/{{$artistas->id}}">{{$artistas->nome}}@if($b < $c),<?php $b++?> @endif @if($b == $c) @endif </a>	
 
 				@endforeach
 				@endif
@@ -149,10 +148,10 @@
 				
 				
 				<td>{{$musicas->data_lancamento}}</td>
-				<td>
-					
+				<td class = "centro">
+					<div class="button-alt">
 					<a onclick="this.firstChild.play()" class="button"><audio src="/music/preview/{{$caminho = $musicas->pathPreview}}"></audio>&#9658;</a>
-					
+					</div>
 				</td>
 				<td>{{$musicas->preco}}</td>
 				

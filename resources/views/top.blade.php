@@ -121,10 +121,10 @@
 
 			<td>{{$abcd->data_lancamento}}</td>
 				
-			<td>
-
+			<td class = "centro">
+				<div class="button-alt">
 				<a onclick="this.firstChild.play()" class="button"><audio src="/music/preview/{{$caminho = $abcd->pathPreview}}"></audio>&#9658;</a>
-
+				</div>
 			</td>	
 			
 			<td>{{$abcd->preco}}</td>
